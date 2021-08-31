@@ -4,35 +4,35 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Final Words | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>Chapter 3 Características dos métodos de interpretabilidade | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Chapter 3 Características dos métodos de interpretabilidade | Material sobre técnicas de interpretabilidade" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Final Words | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Chapter 3 Características dos métodos de interpretabilidade | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Final Words | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Chapter 3 Características dos métodos de interpretabilidade | Material sobre técnicas de interpretabilidade" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-02-19" />
+<meta name="date" content="2021-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="applications.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="interpglobal.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,8 +50,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -117,6 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -133,15 +134,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Material sobre técnicas de interpretabilidade</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Informações</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
+<li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -163,9 +161,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="final-words" class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> Final Words</h1>
-<p>We have finished a nice book.</p>
+<div id="caracteristicas" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Características dos métodos de interpretabilidade</h1>
+<p>Uma possível abordagem para interpretabilidade de modelos de aprendizado de máquina que não são entendidos diretamente por suas fórmulas, os chamados modelos caixa preta, é usar métodos modelo-agnósticos  para interpretabilidade. Essa abordagem consiste em extrair explicações do modelo ajustado, considerando os resultados da predição/classificação para fazer análises. As análises se dão pela modificação de variáveis de entradas e observação de como o modelo se altera em cada uma das modificações realizadas.</p>
+<p>Antes de abordar os métodos estudados nesse trabalho, traremos a seguir três atributos que caracterizam esses métodos: Flexibilidade do Modelo, Flexibilidade de Explicação e Flexibilidade de Representação.</p>
+
+<p>Com as características essenciais aos métodos de interpretabilidade abordadas, estudamos alguns métodos utilizados, suas definições e como eles ajudam a entender a relação do predito com as variáveis explicativas. Nas próximas seções descrevemos alguns métodos de interpretabilidade que podem ser aplicados a qualquer modelo de predição, abordando uma perspectiva de interpretabilidade Global e, posteriormente, Local.</p>
 
 </div>
             </section>
@@ -173,8 +174,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="applications.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interpglobal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -197,6 +198,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -224,6 +226,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

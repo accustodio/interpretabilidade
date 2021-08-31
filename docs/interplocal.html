@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  
+  
+  
+
+<meta name="author" content="Angélica C. Cruz Custódio" />
+
+
+<meta name="date" content="2021-08-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="interpglobal.html"/>
+<link rel="next" href="conclusao.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Material sobre técnicas de interpretabilidade</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Informações</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
+<li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Material sobre técnicas de interpretabilidade</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interplocal" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Interpretabilidade Local</h1>
+<p>Técnicas de interpretabilidade local facilitam o entendimento de uma perspectiva micro do aprendizado de máquina entre o predito e as variáveis explicativas, como a relação entre a predição de uma observação e suas características correspondentes.</p>
+
+<p>Além de trabalharmos com perturbações nas variáveis explicativas, como nos métodos anteriores, uma abordagem interessante é a estimação de modelos mais simples, a partir das variáveis utilizadas no modelo e de sua predição, para explicar algumas predições específicas, que é o caso do LIME .</p>
+<p>O nome do método pode ser entendido por partes:</p>
+
+<p>Basicamente, ao querer entender porque o modelo <code>Caixa Preta'' fez uma certa predição, o LIME testa o que acontece com as predições quando você fornece variações de seus dados no modelo. Com essas amostras de valores perturbados e suas predições é gerado um novo conjunto de dados no qual é treinado um novo modelo, mas dessa vez um modelo interpretável, que será ponderado pela proximidade das unidades amostradas com a predição de interesse estabelecida desde o começo. É importante ressaltar que esse novo modelo ajustado deve ser uma boa aproximação local das predições do modelo</code>Caixa Preta’’, mas não precisa ser uma boa aproximação global e se ajustar a todo o conjunto de dados.</p>
+<p>Podemos definir a explicação local para uma predição <span class="math inline">\(x\)</span>, com o modelo <span class="math inline">\(g\)</span> que minimiza a perda <span class="math inline">\(L\)</span> medindo o quão perto ele está do modelo original <span class="math inline">\(f\)</span> e mantendo o nível de complexidade <span class="math inline">\(\Omega(g)\)</span> baixo.</p>
+<p><span class="math display">\[\begin{equation}
+  \text{explicação}(x)  = \argmin_{g \in G} L(f,g,\pi_x) + \Omega(g).
+\end{equation}\]</span></p>
+
+<p>O exemplo sobre o classificador de  e Lobos citado em  ilustra bem o resultado do LIME usando imagens. Na Figura  temos um exemplo de um cachorro  que foi classificado pelo algoritmo como Lobo. Entretanto, quando utilizado o LIME para entender o porquê da predição é separado como importantes para aquela predição as áreas da imagem que contém neve, conforme destacado. Ou seja, o algoritmo não focava em alguma característica dos animais para diferenciá-los, mas sim no plano de fundo das imagens.</p>
+
+
+<p>As vantagens do algoritmo é que ele é fácil interpretar seus resultados, e pode ser aplicado em dados tabulados, imagens ou textos. A medida de fidelidade resultante do LIME nos permite mensurar de fato quão próximo do modelo original está o modelo ajustado localmente.</p>
+<p>Por outro lado, a definição de vizinhança é uma desvantagem desse método, uma vez que esse é um conceito abstrato e difícil de ser definido. Como as explicações dependem desse conceito, uma pequena variação nele pode resultar em conclusões diferentes.</p>
+
+<p>O algoritmo baseado nos valores de  é um método da Teoria de Jogos, apresentado em , que propõe uma solução de distribuição justa de ganhos e custos para vários jogadores que trabalham cooperativamente. Ela se aplica, principalmente, em situações em que as contribuições de cada jogador são desiguais, mas trabalham com o mesmo objetivo.</p>
+<p>A conexão entre essa solução de Teoria de Jogos e a interpretabilidade de modelos de aprendizado de máquina acontece considerando o jogo como uma tarefa de previsão para uma única observação do conjunto de dados. O ganho é a diferença entre a predição real para a observação e a previsão média para todas as demais observações. Além disso, os jogadores são os valores das variáveis para a observação selecionada, que colaboram para receber o ganho, em outras palavras, para prever um determinado valor.</p>
+<p>Definiremos como é feita a estimativa aproximada de  para o valor de uma única característica, ou seja, primeiro selecionamos uma unidade observacional <span class="math inline">\(x\)</span> do  que temos interesse em interpretar a predição obtida, depois para cada variável <span class="math inline">\(j\)</span> do modelo calculamos seu valor Shapley, definindo um número de iterações <span class="math inline">\(M\)</span>.</p>
+<p>Para realizar o cálculo, precisamos definir então:</p>
+
+<p>Definidos esses valores, conforme apresentado em , os passos para o cálculo do valor Shapley da <span class="math inline">\(j\)</span>-ésima variável são:</p>
+
+<p>Em cada iteração, uma observação aleatória z é selecionada a partir dos dados e uma ordem aleatória das variáveis é gerada, após isso duas novas instâncias são criadas combinando valores da observação <span class="math inline">\(x\)</span> e da observação aleatória <span class="math inline">\(z\)</span>. No passo 5 calculamos a contribuição marginal da <span class="math inline">\(j\)</span>-ésima variável pela diferença de <span class="math inline">\(f(x_{+j})\)</span> por <span class="math inline">\(f(x_{-j})\)</span>, e após repetir esse cálculo para cada iteração computamos o valor médio da contribuição marginal.</p>
+<p>Como citado anteriormente, essa sequência de passos deve ser repetida para uma das variáveis, a fim de calcularmos o valor Shapley de cada uma delas.</p>
+
+<p>Considere um problema relacionado ao empréstimo de dinheiro. Suponha que dois clientes buscaram um empréstimo e temos as seguintes informações sobre eles:</p>
+
+<p>Com as informações da Figura  temos que o Cliente 1 possui cartão de crédito, imóvel próprio e não teve dívida recente e o Cliente 2 possui cartão de crédito, imóvel próprio, mas teve uma dívida recente. Como resultado do modelo utilizado para atribuição de um limite de empréstimo o Cliente 1 recebeu R$ 1.500,00 e o Cliente 2 recebeu R$ 800,00.</p>
+
+<p>Nesse exemplo, o Cliente 2 teve as três variáveis consideradas conjuntamente para a estimativa do valor de empréstimo de R$ 800,00 e o interessante é entender o que contribuiu para que esse valor ficasse R$ 200,00 abaixo da média (considerando a média de empréstimo igual a R$ 1.000,00). Com as estimativas dos valores de  poderíamos dizer, por exemplo, que possuir cartão de crédito contribuiu positivamente R$ 50,00, imóvel próprio contribuiu com R$ 100,00 e histórico de dívida recente contribuiu negativamente -R$ 350,00. Sumarizando as contribuições, temos um saldo de -R$ 200,00.</p>
+
+<p>Como vantagens desse método podemos citar que a predição média é razoavelmente distribuída entre os valores das variáveis de uma observação, o que fornece uma explicação completa. Em  o autor cita que essa medida é utilizada quando uma interpretação é exigida legalmente na União Europeia, por exemplo, devido a sua robustez.</p>
+<p>A complexidade computacional do cálculo é uma das desvantagens, sendo viável na maioria dos problemas apenas uma solução aproximada, na nossa aplicação por exemplo, para calcular os valores Shapley (utilizando um computador de 8GB de memória RAM) para uma observação, demorou aproximadamente 150 minutos.
+Outro ponto que pode pesar de forma negativa nessa técnica é a compreensão do seu resultado, que muitas vezes é mal interpretado como se o valor da variável fosse a predição depois de remover a variável do modelo e retreina-lo.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interpglobal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["interpretabilidade.pdf", "interpretabilidade.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

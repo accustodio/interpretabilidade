@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Introduction | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>Chapter 2 Introdução | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Introduction | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2021-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="literature.html"/>
+<link rel="next" href="caracteristicas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,8 +50,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -117,6 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -133,15 +134,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Material sobre técnicas de interpretabilidade</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Informações</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
+<li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -164,11 +162,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
-<p>You can label chapter and section titles using <code>{#label}</code> after them, e.g., we can reference Chapter <a href="intro.html#intro">2</a>. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter <a href="methods.html#methods">4</a>.</p>
+<h1><span class="header-section-number">Chapter 2</span> Introdução</h1>
 <p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
 <img src="interpretabilidade_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
 <p class="caption">
@@ -176,10 +173,10 @@ Figure 2.1: Here is a nice figure!
 </p>
 </div>
 <p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="intro.html#fig:nice-fig">2.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="intro.html#tab:nice-tab">2.1</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">)</a></code></pre></div>
 <table>
 <caption><span id="tab:nice-tab">Table 2.1: </span>Here is a nice table!</caption>
 <thead>
@@ -334,16 +331,54 @@ Figure 2.1: Here is a nice figure!
 </tr>
 </tbody>
 </table>
-<p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(Xie <a href="#ref-R-bookdown">2020</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-xie2015">2015</a>)</span>.</p>
+<p>Considerar a interpretabilidade é muito importante quando falamos de predições e classificações resultantes de um modelo. Buscar a interpretação de uma predição nos ajuda a entender como chegamos naquele resultado, quais características impactaram nele, além de nos ajudar a tomar decisões com mais responsabilidade e segurança.</p>
+<p>Ao falarmos de interpretabilidade, uma possível abordagem é utilizar técnicas de modelagem que permitem entender diretamente como as variáveis explicativas se relacionam com a variável resposta: os Modelos Interpretáveis. Regressão Linear e Regressão Logística <span class="citation">(Molnar <a href="#ref-molnar2019">2019</a>)</span> são algumas dessas técnicas que podem ser consideradas interpretáveis, dependendo do nível de complexidade na combinação das suas variáveis, das regras e também do nível de domínio do assunto de quem está analisando-as <span class="citation">(Doshi-Velez <a href="#ref-doshivelez">2017</a>)</span>.</p>
+<p>Entretanto, quando utilizamos modelos não interpretáveis, também conhecidos como Modelos Opacos ou ``Caixa Preta’’, não é possível entender diretamente a relação entre as variáveis explicativas e a variável resposta. Nesses modelos a predição pode ser resultado de um conjunto complexo de regras ou as relações não se apresentam de forma direta e linear, como em Florestas Aleatórias <span class="citation">(Breiman <a href="#ref-breiman2001random">2001</a>)</span>, as Máquinas de Vetores de Suporte <span class="citation">(Shawe-Taylor and Cristianini <a href="#ref-shawe2000support">2000</a>)</span> (SVM, do termo em inglês <em>Support Vector Machine</em>), e as Redes Neurais Profundas <span class="citation">(Liu et al. <a href="#ref-liu2017survey">2017</a>)</span>.</p>
+<p>Nesses casos não fica claro o impacto de cada variável e, como consequência, podemos ter uma série de problemas com variáveis que não deveriam ser relevantes e erroneamente são consideradas pelo modelo, seja por um viés de seleção das amostras ou por um viés histórico sócio-cultural que acaba refletindo na base de dados utilizada no treinamento do modelo. Esse cenário nos possibilita tomar decisões com base em predições enviesadas sem sequer saber disso, o que pode levar a repetição de padrões e processos discriminatórios que impactam diretamente na desigualdade entre indivíduos, como foi abordado por Cathy O’Neil em <span class="citation">(O’Neil <a href="#ref-cath">2016</a>)</span>.</p>
+<p>A discussão sobre viés em algoritmos está permeada por muitas questões éticas e morais. Como apontado em <span class="citation">(“Algoritmos de Inteligência Artificial E Vieses: Uma Reflexão Sobre ética E Justiça” <a href="#ref-programaria">2020</a>)</span>, essa discussão implica falar sobre questões como gênero, raça, idade, orientação afetiva-sexual, linguagem, cultura, deficiência, condição econômica, entre outros fatores e suas interseccionalidades.</p>
+<p>Para ilustrar algumas dessas questões, trouxemos exemplos reais em que, por não terem considerado a etapa de interpretabilidade no processo de desenvolvimento do modelo, implica como resultado classificações incorretas e com impactos negativos, devido aos vieses na informações do treinamento do algoritmo.</p>
+
+<p>Segundo a agência  <span class="citation">(Reuters <a href="#ref-amazon1">2018</a>)</span>, com a proposta de elevar o nível de tomada de decisão automática, a empresa Amazon desenvolveu internamente uma ferramenta experimental de contratação utilizando inteligência artificial para fornecer aos candidatos pontuações que variam de uma a cinco estrelas. Entretanto, a empresa percebeu que seu novo método não classificava os candidatos de forma neutra em termos de gênero.</p>
+<p>Isso ocorreu porque, para classificar os candidatos, o modelo foi treinado utilizando a base histórica dos currículos enviados à empresa nos últimos 10 anos. Nessa base era refletida a dominância masculina que existe em toda a indústria de tecnologia.</p>
+<p>De acordo com a reportagem da  <span class="citation">(Guardian <a href="#ref-amazon2">2018</a>)</span>, cerca de 55% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos CareerBuilder.</p>
+<p>Esse tipo de experimento que a <span class="citation">(Reuters <a href="#ref-amazon1">2018</a>)</span> relatou, é um exemplo sobre as implicações éticas que um modelo pode ter e o quão importante e urgente é a preocupação de interpretar o modelo.</p>
+
+<p>Em <span class="citation">(Lapuschkin et al. <a href="#ref-cavalo">2019</a>)</span> foi estudado um exemplo em que o algoritmo de aprendizado de máquina encontrou uma característica curiosa nas imagens para classificá-las. O objetivo era classificação entre cavalo, pessoa, trem ou carro. Entretanto, para classificar como cavalo o algoritmo considera como área relevante a marca d’água do fotógrafo que estava na base de treinamento do modelo. Isso justifica porque, na base de teste, uma imagem de carro que contém a marca d’água é classificada como cavalo, como visto na Figura .</p>
+
+<p>Nesse caso, a marca d’água do fotógrafo na base de treinamento atrapalhou a classificação, e quando observamos na imagem quais áreas foram mais relevantes para aquela rotulação como cavalo encontramos a resposta do viés do algoritmo.</p>
 
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-xie2015">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.</p>
+<div id="ref-programaria">
+<p>“Algoritmos de Inteligência Artificial E Vieses: Uma Reflexão Sobre ética E Justiça.” 2020. <a href="https://www.programaria.org/algoritmos-de-inteligencia-artificial-e-vieses-uma-reflexao-sobre-etica-e-justica/">https://www.programaria.org/algoritmos-de-inteligencia-artificial-e-vieses-uma-reflexao-sobre-etica-e-justica/</a>.</p>
 </div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.</p>
+<div id="ref-breiman2001random">
+<p>Breiman, Leo. 2001. “Random Forests.” <em>Machine Learning</em> 45 (1). Springer: 5–32.</p>
+</div>
+<div id="ref-doshivelez">
+<p>Doshi-Velez, e Been Kim, Finale. 2017. “Towards a rigorous science of interpretable machine learning.” <em>arXiv Preprints</em> arXiv:1702.08608.</p>
+</div>
+<div id="ref-amazon2">
+<p>Guardian, The. 2018. “Amazon ditched AI recruiting tool that favored men for technical jobs.” <a href="\url{https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine}">\url{https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine}</a>.</p>
+</div>
+<div id="ref-cavalo">
+<p>Lapuschkin, S., S. Waldchen, A. Binder, G. Montavon, W. Samek, and K. Muller. 2019. “Unmasking Clever Hans Predictors and Assessing What Machines Really Learn.” <em>Nature Communications</em>.</p>
+</div>
+<div id="ref-liu2017survey">
+<p>Liu, Weibo, Zidong Wang, Xiaohui Liu, Nianyin Zeng, Yurong Liu, and Fuad E Alsaadi. 2017. “A Survey of Deep Neural Network Architectures and Their Applications.” <em>Neurocomputing</em> 234. Elsevier: 11–26.</p>
+</div>
+<div id="ref-molnar2019">
+<p>Molnar, Christoph. 2019. <em>Interpretable Machine Learning: A Guide for Making Black Box Models Explainable</em>. Online.</p>
+</div>
+<div id="ref-cath">
+<p>O’Neil, Cathy. 2016. <em>Weapons of Math Destruction</em>. United States: Crown Books.</p>
+</div>
+<div id="ref-amazon1">
+<p>Reuters. 2018. “Amazon scraps secret AI recruiting tool that showed bias against women.” <a href="\url{https://www.reuters.com/article/us-amazon-com-jobs-automation-insight}">\url{https://www.reuters.com/article/us-amazon-com-jobs-automation-insight}</a>.</p>
+</div>
+<div id="ref-shawe2000support">
+<p>Shawe-Taylor, John, and Nello Cristianini. 2000. “Support Vector Machines.” <em>An Introduction to Support Vector Machines and Other Kernel-Based Learning Methods</em>. Cambridge University Press, 93–112.</p>
 </div>
 </div>
             </section>
@@ -352,7 +387,7 @@ Figure 2.1: Here is a nice figure!
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="caracteristicas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -375,6 +410,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

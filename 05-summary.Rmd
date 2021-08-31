@@ -1,3 +1,9 @@
-# Final Words
+# Conclusões e Discussões {#conclusao}
 
-We have finished a nice book.
+
+Entendemos que os métodos de interpretabilidade são muito úteis quando utilizamos técnicas de modelagem não interpretáveis, tanto os métodos mais visuais quanto os que estimam outro modelo, por exemplo, nos ajudam a entender o porquê da predição e desmistificar qual o impacto das variáveis explicativas na predição final.
+
+Com os métodos visuais PDP, ICE e ALE temos a facilidade no entendimento de como as variáveis impactam na predição. O LIME e os valores \emph{Shapley} nos permitem analisar mais minuciosamente o porque dos valores preditos. A combinação dessas técnicas é muito informativa, pois avaliamos a questão de interpretabilidade de uma maneira mais completa e de diferentes pontos da explicação.
+
+
+É importante ressaltar que mesmo com o auxílio de ferramentas de interpretabilidade, o uso de modelos opacos precisa ser avaliado com cautela, pois como citado em \cite{rudin2019stop}, algumas vezes tem-se a crença que esses modelos têm a capacidade de descobrir padrões ocultos nos dados, mas em muitos casos um modelo transparente pode ser capaz de descobrir esses mesmos padrões, sendo importante considerar o processo geral do desenvolvimento de um modelo, desde a seleção dos dados e os tratamentos das variáveis, e não apenas qual a técnica de modelagem será utilizada. No próximo capítulo traremos uma aplicação em dados de um problema \emph{uplift}, considerando um modelo interpretável e um modelo opaco, a fim de observar os resultados das duas diferentes abordagens.

@@ -1,10 +1,8 @@
 fig:nice-fig
 tab:nice-tab
-prerequisites
+informações
 intro
-literature
-methods
-applications
-example-one
-example-two
-final-words
+caracteristicas
+interpglobal
+interplocal
+conclusao

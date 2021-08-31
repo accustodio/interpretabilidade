@@ -1,6 +1,7 @@
 # Introdução {#intro}
 
 
+
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
 ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}

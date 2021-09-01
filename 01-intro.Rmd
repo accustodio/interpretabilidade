@@ -1,24 +1,6 @@
 # Introdução {#intro}
 
 
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
-
-
 Considerar a interpretabilidade é muito importante quando falamos de predições e classificações resultantes de um modelo. Buscar a interpretação de uma predição nos ajuda a entender como chegamos naquele resultado, quais características impactaram nele, além de nos ajudar a tomar decisões com mais responsabilidade e segurança.
 
 Ao falarmos de interpretabilidade, uma possível abordagem é utilizar técnicas de modelagem que permitem entender diretamente como as variáveis explicativas se relacionam com a variável resposta: os Modelos Interpretáveis. Regressão Linear e Regressão Logística [@molnar2019] são algumas dessas técnicas que podem ser consideradas interpretáveis, dependendo do nível de complexidade na combinação das suas variáveis, das regras e também do nível de domínio do assunto de quem está analisando-as [@doshivelez].

@@ -21,7 +21,7 @@ Basicamente, ao querer entender porque o modelo ``Caixa Preta'' fez uma certa pr
 Podemos definir a explicação local para uma predição $x$, com o modelo $g$ que minimiza a perda $L$ medindo o quão perto ele está do modelo original $f$ e mantendo o nível de complexidade $\Omega(g)$ baixo.
 
 \begin{equation}
-  \text{explicação}(x)  = \argmin_{g \in G} L(f,g,\pi_x) + \Omega(g).
+  \text{explicação}(x)  = \arg\min_{g \in G} L(f,g,\pi_x) + \Omega(g).
 \end{equation}
 
 \subsubsection{Exemplo Aplicação}

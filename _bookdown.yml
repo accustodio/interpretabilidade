@@ -3,4 +3,6 @@ book_filename: "interpretabilidade"
 delete_merged_file: true
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name:  "Capítulo "
+  label:
+    fig: "Figura "

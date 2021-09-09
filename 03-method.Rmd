@@ -84,7 +84,10 @@ Em outras palavras, os gráficos de ALE calculam a média das alterações nas p
 
 Retomando os subconjuntos de variáveis $x_S$ e $x_C$, tal que $x_S$ é um subconjunto das variáveis explicativas de $X$ que utilizaremos no gráfico, e $x_C$ o subconjunto complementar das variáveis utilizadas no ajuste do modelo, temos:
 
-$$ \hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\& =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant $$
+
+$$
+\hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\ =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant 
+$$
 
 Com a integral sobre $z$, acumulamos os gradientes locais ao longo do intervalo do subconjunto $x_S$, o que nos trás o efeito das alterações na predição. Outro ponto é que ao subtrairmos uma constante dos resultados, centralizamos o gráfico ALE, assim o efeito médio sobre os dados é zero.
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-08-30" />
+<meta name="date" content="2021-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,68 +54,6 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -134,10 +72,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Material sobre técnicas de interpretabilidade</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Informações</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sobre esse material</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#algoritmo-de-contratação-sexista"><i class="fa fa-check"></i><b>2.1</b> Algoritmo de Contratação sexista</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
-<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a><ul>
+<li class="chapter" data-level="4.1" data-path="interpglobal.html"><a href="interpglobal.html#gráfico-de-dependência-parcial-partial-dependence-plot---pdp"><i class="fa fa-check"></i><b>4.1</b> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="interpglobal.html"><a href="interpglobal.html#esperança-condicional-individual-individual-conditional-expectation---ice"><i class="fa fa-check"></i><b>4.2</b> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens-1"><i class="fa fa-check"></i><b>4.2.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="interpglobal.html"><a href="interpglobal.html#efeitos-acumulados-locais-accumulated-local-effects---ale"><i class="fa fa-check"></i><b>4.3</b> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
 <li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -164,8 +113,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="interpglobal" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Interpretabilidade Global</h1>
 <p>Algumas técnicas de interpretabilidade de modelos opacos facilitam o entendimento dos seus resultados de uma perspectiva global, ou seja, as relações aprendidas entre a variável resposta e as variáveis explicativas do ponto de vista de um conjunto de dados e o modelo previamente ajustado.</p>
-
-<p>O gráfico de dependência parcial mostra um resumo da relação de uma ou duas variáveis explicativas do modelo e sua dependência com o predito, por meio do efeito marginal. Com ele podemos observar, por exemplo, se existe uma relação entre as variáveis e se ela é linear, quadrática ou mais complexa .</p>
+<div id="gráfico-de-dependência-parcial-partial-dependence-plot---pdp" class="section level2">
+<h2><span class="header-section-number">4.1</span> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</h2>
+<p>O gráfico de dependência parcial mostra um resumo da relação de uma ou duas variáveis explicativas do modelo e sua dependência com o predito, por meio do efeito marginal. Com ele podemos observar, por exemplo, se existe uma relação entre as variáveis e se ela é linear, quadrática ou mais complexa <span class="citation">(Friedman <a href="#ref-friedmanpdp">2001</a>)</span>.</p>
 <p>No caso de construir o gráfico com uma variável explicativa temos os valores preditos pelo modelo plotados para cada valor correspondente da variável explicativa. Se a variável for categórica, temos um gráfico de barras em que cada barra representa uma categoria diferente. Quando construímos com duas variáveis explicativas temos um gráfico tri-dimensional, e podemos analisar pelas diferentes perspectivas dele para entender a relação com os valores preditos. Nessa análise não é comum considerarmos mais que duas variáveis, pois precisaríamos avaliar mais que três dimensões.</p>
 <p>Para definirmos o PDP temos <span class="math inline">\(x_S\)</span>, um subconjunto das variáveis explicativas <span class="math inline">\(X\)</span> que utilizaremos no gráfico. Como já citamos anteriormente, geralmente esse subconjunto é de uma ou duas variáveis.</p>
 <p><span class="math display">\[x_S \in X\]</span></p>
@@ -177,37 +127,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A função de dependência parcial para regressão é definida como:</p>
 <p><span class="math display">\[\hat{f}_{x_S} (x_S) = E_{x_C }[\hat{f}(X)] = \int \hat{f}(x_S,x_C) \delta P(x_C) .\]</span></p>
 <p>Ao marginalizar sobre as variáveis do conjunto <span class="math inline">\(C\)</span>, temos uma função que depende apenas das variáveis em <span class="math inline">\(S\)</span>. Assim, observamos que a função parcial nos diz: para determinado valor das características <span class="math inline">\(S\)</span> qual é o efeito marginal médio na previsão do modelo.</p>
-
+<div id="vantagens-e-desvantagens" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Vantagens e Desvantagens</h3>
 <p>A fácil implementação do PDP é uma de suas vantagens. Matematicamente ele não é uma método complexo. Além disso o gráfico é intuitivo e simples de ser interpretado.</p>
 <p>Por outro lado, com o PDP, não temos a noção da distribuição da variável, o que pode levar a tirar conclusões sobre um intervalo que tem um baixo volume de dados na base originalmente considerada no desenvolvimento do modelo.</p>
-<p>Outro ponto importante é a suposição de independência: supõe-se que as variáveis para as quais a dependência parcial é calculada não estão correlacionados com outras variáveis. Por exemplo, temos que prever o número de sapatos vendidos por um período, considerando idade, altura e tamanho do calçado. Para o gráfico PDP do tamanho do calçado, consideramos que a altura não está relacionada com o número. Assim, para o tamanho <span class="math inline">\(42\)</span>, por exemplo, calculamos a média da distribuição marginal da altura que pode incluir uma pessoa abaixo de <span class="math inline">\(1,50 m\)</span>, o que não é realista para um tamanho <span class="math inline">\(42\)</span> de sapato. Na vida real, é improvável que uma pessoa com altura abaixo de <span class="math inline">\(1,50 m\)</span> use esse tamanho de sapato, ou seja, criamos pontos de dados em área da distribuição das variáveis para os quais é muito baixa a probabilidade real de acontecer. Uma solução para esse problema seria considerar a distribuição condicional da variável, que é o método abordado pelo gráfico de efeito local acumulado, ou gráficos ALE  que tratamos também nesse trabalho.</p>
-
-<p>Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em . Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo.</p>
+<p>Outro ponto importante é a suposição de independência: supõe-se que as variáveis para as quais a dependência parcial é calculada não estão correlacionados com outras variáveis. Por exemplo, temos que prever o número de sapatos vendidos por um período, considerando idade, altura e tamanho do calçado. Para o gráfico PDP do tamanho do calçado, consideramos que a altura não está relacionada com o número. Assim, para o tamanho <span class="math inline">\(42\)</span>, por exemplo, calculamos a média da distribuição marginal da altura que pode incluir uma pessoa abaixo de <span class="math inline">\(1,50 m\)</span>, o que não é realista para um tamanho <span class="math inline">\(42\)</span> de sapato. Na vida real, é improvável que uma pessoa com altura abaixo de <span class="math inline">\(1,50 m\)</span> use esse tamanho de sapato, ou seja, criamos pontos de dados em área da distribuição das variáveis para os quais é muito baixa a probabilidade real de acontecer. Uma solução para esse problema seria considerar a distribuição condicional da variável, que é o método abordado pelo gráfico de efeito local acumulado, ou gráficos ALE <span class="citation">(Apley and Zhu <a href="#ref-ale">2016</a>)</span> que tratamos também nesse trabalho.</p>
+</div>
+</div>
+<div id="esperança-condicional-individual-individual-conditional-expectation---ice" class="section level2">
+<h2><span class="header-section-number">4.2</span> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</h2>
+<p>Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em <span class="citation">(Goldstein et al. <a href="#ref-ice">2015</a>)</span>. Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo.</p>
 <p>O cálculo do ICE é realizado mantendo os valores das demais variáveis e modificando apenas o da variável escolhida para obter as novas predições através do modelo já ajustado.</p>
 <p>É interessante utilizar o ICE em análise conjunta com o PDP, pois o PDP mostra como é a relação média entre uma variável e a predição, mas como já discutimos, ele funciona bem se as interações são fracas entre as variáveis para as quais o PDP é calculado e as demais variáveis. Entretanto, se houver o cenário de fortes interações, ele omite o relacionamento heterogêneo com diferentes grupos de observação que pode ser observado no ICE.</p>
 <p>Definindo matematicamente as curvas ICE, seria que para cada elemento <span class="math inline">\(i\)</span> em <span class="math inline">\(\{(x_S^{(i)},x_C^{(i)}\}_{i=1}^N\)</span> uma curva <span class="math inline">\(\hat{f}_S^{(i)}\)</span> é calculada em <span class="math inline">\(x_S^{(i)}\)</span>, enquanto <span class="math inline">\(x_C^{(i)}\)</span> é mantido fixo.</p>
-<p>Vemos também em  uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos <span class="math inline">\(k\)</span> curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote , implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.</p>
-
+<p>Vemos também em <span class="citation">(Goldstein et al. <a href="#ref-ice">2015</a>)</span> uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos <span class="math inline">\(k\)</span> curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote <strong>ICEbox</strong>, implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.</p>
+<div id="vantagens-e-desvantagens-1" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Vantagens e Desvantagens</h3>
 <p>Uma vantagem desse método é o quanto ele é de fácil compreensão, sendo que cada linha representa diretamente uma observação da base de dados. O método trás também uma visão sobre o conjunto das observações, podendo agregar informações de subgrupos mais similares, por exemplo.</p>
 <p>Dependendo do tamanho do conjunto de dados e de sua distribuição, e por trazer uma visualização do comportamento individual, os gráficos ICE podem ficar com muita informação no gráfico, sendo pouco informativos nesse cenário. Por esse mesmo motivo, analisar mais que uma variável com relação ao predito não é recomendado.</p>
-
-<p>Em  temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor <span class="math inline">\(v\)</span> de determinada variável, independentemente se aquele valor <span class="math inline">\(v\)</span> faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma ``pequena janela’’ da variável em torno de um valor <span class="math inline">\(v\)</span>, fixando as demais variáveis.</p>
+</div>
+</div>
+<div id="efeitos-acumulados-locais-accumulated-local-effects---ale" class="section level2">
+<h2><span class="header-section-number">4.3</span> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</h2>
+<p>Em <span class="citation">(Molnar <a href="#ref-molnar2019">2019</a>)</span> temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor <span class="math inline">\(v\)</span> de determinada variável, independentemente se aquele valor <span class="math inline">\(v\)</span> faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma ``pequena janela’’ da variável em torno de um valor <span class="math inline">\(v\)</span>, fixando as demais variáveis.</p>
 <p>Se no PDP calculamos a média das previsões condicionais para cada valor da variável explicativa em análise, no cálculo do ALE, consideramos a distribuição marginal em cada valor do intervalo que ela varia. Em outras palavras, isso significa que temos que definir uma vizinhança. Por exemplo, para o cálculo do efeito de um sapato tamanho <span class="math inline">\(40\)</span> no valor predito das vendas, podemos calcular a média das previsões de todos os sapatos vendidos entre <span class="math inline">\(38\)</span> e <span class="math inline">\(42\)</span>.</p>
 
 <p>Na Figura  é ilustrado exatamente o cenário em que temos duas variáveis correlacionadas. Nesse caso, <span class="math inline">\(x_1\)</span> é correlacionada com <span class="math inline">\(x_2\)</span>. Primeiro, a variável <span class="math inline">\(x_1\)</span> é separada em intervalos representados pelas linhas verticais, <span class="math inline">\(([z_{0,1},z_{1,1}],[z_{1,1},z_{2,1}])\)</span>, por exemplo. Para os pontos em um determinado intervalo, é calculada a diferença na predição substituindo tais pontos originais pelos extremos do intervalo em que eles estão. Essas diferenças são posteriormente acumuladas e centralizadas.</p>
-<p>Em outras palavras, os gráficos de ALE calculam a média das alterações nas previsões e as acumulam nesse intervalo definido, que é menor que o intervalo de possíveis valores que a variável assume .</p>
+<p>Em outras palavras, os gráficos de ALE calculam a média das alterações nas previsões e as acumulam nesse intervalo definido, que é menor que o intervalo de possíveis valores que a variável assume <span class="citation">(Apley and Zhu <a href="#ref-ale">2016</a>)</span>.</p>
 <p>Retomando os subconjuntos de variáveis <span class="math inline">\(x_S\)</span> e <span class="math inline">\(x_C\)</span>, tal que <span class="math inline">\(x_S\)</span> é um subconjunto das variáveis explicativas de <span class="math inline">\(X\)</span> que utilizaremos no gráfico, e <span class="math inline">\(x_C\)</span> o subconjunto complementar das variáveis utilizadas no ajuste do modelo, temos:</p>
-<p><span class="math display">\[\begin{align}
-  \hat{f}_{x_S,ALE} (x_S) &amp; = 
-\int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - \text{constant} \\
-&amp; =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - \text{constant}  
-\end{align}\]</span></p>
+<p><span class="math display">\[ \hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\&amp; =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant \]</span></p>
 <p>Com a integral sobre <span class="math inline">\(z\)</span>, acumulamos os gradientes locais ao longo do intervalo do subconjunto <span class="math inline">\(x_S\)</span>, o que nos trás o efeito das alterações na predição. Outro ponto é que ao subtrairmos uma constante dos resultados, centralizamos o gráfico ALE, assim o efeito médio sobre os dados é zero.</p>
 
 <p>Uma das vantagens desse método é a facilidade de entendimento. Visualmente, ele representa o efeito relativo na predição quando alteramos uma variável, condicionado em um determinado valor. Outra vantagem é que os gráficos ALE não são enviesados, pois funcionam quando variáveis são correlacionadas.</p>
 <p>Entretanto, dependendo do número de intervalos, os gráficos ALE podem ficar um pouco instáveis. Um número alto de intervalos tendem a ter muitos pequenos altos e baixos. Reduzir o número de intervalos seria uma alternativa, pois torna as estimativas mais estáveis. Entretanto, ele pode suavizar a complexidade do modelo de predição. Temos então um  entre um número alto ou baixo de intervalos e não existe uma solução perfeita para definir o número de intervalos .</p>
 <p>Outro ponto interessante é que, se compararmos ao PDP, temos as curvas ICE que o complementa e ajuda a entender a variação das predições na individualidade do conjunto de dados, observando o efeito diferente para subconjuntos dos dados. Nos gráficos ALE, só se pode verificar por intervalo se o efeito é diferente, e não é possível analisar individualmente com um gráfico auxiliar o mesmo efeito.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-ale">
+<p>Apley, Daniel W., and Jingyu Zhu. 2016. “Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models.”</p>
+</div>
+<div id="ref-friedmanpdp">
+<p>Friedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” <em>The Annals of Statistics</em> 29 (5). Institute of Mathematical Statistics: 1189–1232. <a href="http://www.jstor.org/stable/2699986">http://www.jstor.org/stable/2699986</a>.</p>
+</div>
+<div id="ref-ice">
+<p>Goldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” <em>Journal of Computational and Graphical Statistics</em> 24 (1): 44–65. <a href="https://doi.org/10.1080/10618600.2014.907095">https://doi.org/10.1080/10618600.2014.907095</a>.</p>
+</div>
+<div id="ref-molnar2019">
+<p>Molnar, Christoph. 2019. <em>Interpretable Machine Learning: A Guide for Making Black Box Models Explainable</em>. Online.</p>
+</div>
 </div>
             </section>
 

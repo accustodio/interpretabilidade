@@ -1,1 +1,1 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+Esse é um material feito com R Markdown e **bookdown** (https://github.com/rstudio/bookdown). É possível encontrar mais informações sobre bookdown aqui: https://bookdown.org/home/about/.

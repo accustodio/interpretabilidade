@@ -15,28 +15,28 @@ A discussão sobre viés em algoritmos está permeada por muitas questões étic
 
 Para ilustrar algumas dessas questões, trouxemos exemplos reais em que, por não terem considerado a etapa de interpretabilidade no processo de desenvolvimento do modelo, implica como resultado classificações incorretas e com impactos negativos, devido aos vieses na informações do treinamento do algoritmo.
 
-\subsection{Algoritmo de Contratação sexista}
+## Algoritmo de Contratação sexista
 
-Segundo a agência \textit{Reuters} [@amazon1], com a proposta de elevar o nível de tomada de decisão automática, a empresa Amazon desenvolveu internamente uma ferramenta experimental de contratação  utilizando inteligência artificial para fornecer aos candidatos pontuações que variam de uma a cinco estrelas. Entretanto, a empresa percebeu que seu novo método não classificava os candidatos de forma neutra em termos de gênero.
+Segundo a agência _Reuters_ [@amazon1], com a proposta de elevar o nível de tomada de decisão automática, a empresa Amazon desenvolveu internamente uma ferramenta experimental de contratação  utilizando inteligência artificial para fornecer aos candidatos pontuações que variam de uma a cinco estrelas. Entretanto, a empresa percebeu que seu novo método não classificava os candidatos de forma neutra em termos de gênero.
 
 Isso ocorreu porque, para classificar os candidatos, o modelo foi treinado utilizando a base histórica dos currículos enviados à empresa nos últimos 10 anos. Nessa base era refletida a dominância masculina que existe em toda a indústria de tecnologia.
 
-De acordo com a reportagem da \textit{The Guardian} [@amazon2], cerca de 55\% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos CareerBuilder\footnote{\url{https://www.careerbuilder.com/}}.
+```{r echo=FALSE, out.width="40%",fig.align = 'center', fig.cap="Fonte: [MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?](https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/)"}
+knitr::include_graphics("https://sloanreview.mit.edu/wp-content/uploads/2017/12/FR-Beck-Libert-Gender-Inequality-Equality-Issues-1200-300x300.jpg")
+```
+
+
+De acordo com a reportagem da _The Guardian_ [@amazon2], cerca de 55\% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos [CareerBuilder](https://www.careerbuilder.com/).
 
 Esse tipo de experimento que a [@amazon1] relatou, é um exemplo sobre as implicações éticas que um modelo pode ter e o quão importante e urgente é a preocupação de interpretar o modelo.
 
 
-\subsection{Algoritmo de classificação de imagens}
+## Algoritmo de classificação de imagens
 
-Em [@cavalo] foi estudado um exemplo em que o algoritmo de aprendizado de máquina encontrou uma característica curiosa nas imagens para classificá-las. O objetivo era classificação entre cavalo, pessoa, trem ou carro. Entretanto, para classificar como cavalo o algoritmo considera como área relevante a marca d'água do fotógrafo que estava na base de treinamento do modelo. Isso justifica porque, na base de teste, uma imagem de carro que contém a marca d'água é classificada como cavalo, como visto na Figura \ref{fig:imagem_cavalo}.
+Em [@cavalo] foi estudado um exemplo em que o algoritmo de aprendizado de máquina encontrou uma característica curiosa nas imagens para classificá-las. O objetivo era classificação entre cavalo, pessoa, trem ou carro. Entretanto, para classificar como cavalo o algoritmo considera como área relevante a marca d'água do fotógrafo que estava na base de treinamento do modelo. Isso justifica porque, na base de teste, uma imagem de carro que contém a marca d'água é classificada como cavalo, como visto na figura abaixo.
 
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.8\textwidth]{imagem_cavalo.png}
-\caption{Método de explicação das áreas da imagem que foram mais relevantes na classificação}
-\label{fig:imagem_cavalo}
-\centering
-\end{figure}
+```{r echo=FALSE, out.width="70%",fig.align = 'center', fig.cap="Fonte: "}
+knitr::include_graphics("imgs/imagem_cavalo.png")
+```
 
 Nesse caso, a marca d'água do fotógrafo na base de treinamento atrapalhou a classificação, e quando observamos na imagem quais áreas foram mais relevantes para aquela rotulação como cavalo encontramos a resposta do viés do algoritmo. 

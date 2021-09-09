@@ -4,9 +4,9 @@
 Algumas técnicas de interpretabilidade de modelos opacos facilitam o entendimento dos seus resultados de uma perspectiva global, ou seja, as relações aprendidas entre a variável resposta e as variáveis explicativas do ponto de vista de um conjunto de dados e o modelo previamente ajustado.
 
 
-\subsection{Gráfico de Dependência Parcial (\textit{Partial Dependence Plot - PDP})}
+## Gráfico de Dependência Parcial (_Partial Dependence Plot_) - PDP
 
-O gráfico de dependência parcial mostra um resumo da relação de uma ou duas variáveis explicativas do modelo e sua dependência com o predito, por meio do efeito marginal. Com ele podemos observar, por exemplo, se existe uma relação entre as variáveis e se ela é linear, quadrática ou mais complexa \cite{friedmanpdp}.
+O gráfico de dependência parcial mostra um resumo da relação de uma ou duas variáveis explicativas do modelo e sua dependência com o predito, por meio do efeito marginal. Com ele podemos observar, por exemplo, se existe uma relação entre as variáveis e se ela é linear, quadrática ou mais complexa [@friedmanpdp].
 
 No caso de construir o gráfico com uma variável explicativa temos os valores preditos pelo modelo plotados para cada valor correspondente da variável explicativa. Se a variável for categórica, temos um gráfico de barras em que cada barra representa uma categoria diferente. Quando construímos com duas variáveis explicativas temos um gráfico tri-dimensional, e podemos analisar pelas diferentes perspectivas dele para entender a relação com os valores preditos.  Nessa análise não é comum considerarmos mais que duas variáveis, pois precisaríamos avaliar mais que três dimensões.
 
@@ -14,7 +14,7 @@ Para definirmos o PDP temos $x_S$, um subconjunto das variáveis explicativas $X
 
 $$x_S \in X$$
 
-\noindent e $x_C$ o subconjunto complementar das variáveis utilizadas no ajuste do modelo 
+e $x_C$ o subconjunto complementar das variáveis utilizadas no ajuste do modelo 
 
 $$x_S \cup x_C= X.$$
 
@@ -32,18 +32,18 @@ Ao marginalizar sobre as variáveis do conjunto $C$, temos uma função que depe
  
 
 
-\subsubsection{Vantagens e Desvantagens}
+### Vantagens e Desvantagens
 
 A fácil implementação do PDP é uma de suas vantagens. Matematicamente ele não é uma método complexo. Além disso o gráfico é intuitivo e simples de ser interpretado. 
 
 Por outro lado, com o PDP, não temos a noção da distribuição da variável, o que pode levar a tirar conclusões sobre um intervalo que tem um baixo volume de dados na base originalmente considerada no desenvolvimento do modelo.
 
-Outro ponto importante é a suposição de independência: supõe-se que as variáveis para as quais a dependência parcial é calculada não estão correlacionados com outras variáveis. Por exemplo, temos que prever o número de sapatos vendidos por um período, considerando idade, altura e tamanho do calçado. Para o gráfico PDP do tamanho do calçado, consideramos que a altura não está relacionada com o número. Assim, para o tamanho $42$, por exemplo, calculamos a média da distribuição marginal da altura que pode incluir uma pessoa abaixo de $1,50 m$, o que não é realista para um tamanho $42$ de sapato. Na vida real, é improvável que uma pessoa com altura abaixo de $1,50 m$ use esse tamanho de sapato, ou seja, criamos pontos de dados em área da distribuição das variáveis para os quais é muito baixa a probabilidade real de acontecer. Uma solução para esse problema seria considerar a distribuição condicional da variável, que é o método abordado pelo gráfico de efeito local acumulado, ou gráficos ALE \cite{ale} que tratamos também nesse trabalho.
+Outro ponto importante é a suposição de independência: supõe-se que as variáveis para as quais a dependência parcial é calculada não estão correlacionados com outras variáveis. Por exemplo, temos que prever o número de sapatos vendidos por um período, considerando idade, altura e tamanho do calçado. Para o gráfico PDP do tamanho do calçado, consideramos que a altura não está relacionada com o número. Assim, para o tamanho $42$, por exemplo, calculamos a média da distribuição marginal da altura que pode incluir uma pessoa abaixo de $1,50 m$, o que não é realista para um tamanho $42$ de sapato. Na vida real, é improvável que uma pessoa com altura abaixo de $1,50 m$ use esse tamanho de sapato, ou seja, criamos pontos de dados em área da distribuição das variáveis para os quais é muito baixa a probabilidade real de acontecer. Uma solução para esse problema seria considerar a distribuição condicional da variável, que é o método abordado pelo gráfico de efeito local acumulado, ou gráficos ALE [@ale] que tratamos também nesse trabalho.
 
 
-\subsection{Esperança Condicional Individual - \textit{Individual Conditional Expectation} (ICE)}
+## Esperança Condicional Individual (_Individual Conditional Expectation_) - ICE
 
-Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em \cite{ice}. Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo. 
+Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em [@ice]. Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo. 
 
 O cálculo do ICE é realizado mantendo os valores das demais variáveis e modificando apenas o da variável escolhida para obter as novas predições através do modelo já ajustado.
 
@@ -51,11 +51,11 @@ O cálculo do ICE é realizado mantendo os valores das demais variáveis e modif
 
 Definindo matematicamente as curvas ICE, seria que para cada elemento $i$ em $\{(x_S^{(i)},x_C^{(i)}\}_{i=1}^N$ uma curva $\hat{f}_S^{(i)}$ é calculada em $x_S^{(i)}$, enquanto $x_C^{(i)}$ é mantido fixo.
 
-Vemos também em \cite{ice} uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos $k$ curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote \emph{ICEbox}, implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.
+Vemos também em [@ice] uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos $k$ curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote **ICEbox**, implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.
 
 
 
-\subsubsection{Vantagens e Desvantagens}
+### Vantagens e Desvantagens
 
 Uma vantagem desse método é o quanto ele é de fácil compreensão, sendo que cada linha representa diretamente uma observação da base de dados. O método trás também uma visão sobre o conjunto das observações, podendo agregar informações de subgrupos mais similares, por exemplo.
 
@@ -63,9 +63,9 @@ Dependendo do tamanho do conjunto de dados e de sua distribuição, e por trazer
 
 
 
-\subsection{Efeitos Acumulados Locais - \textit{Accumulated Local Effects} (ALE)} 
+## Efeitos Acumulados Locais (_Accumulated Local Effects_) - ALE 
 
-Em \cite{molnar2019} temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor $v$ de determinada variável, independentemente se aquele valor $v$ faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma ``pequena janela'' da variável em torno de um valor $v$, fixando as demais variáveis.
+Em [@molnar2019] temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor $v$ de determinada variável, independentemente se aquele valor $v$ faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma ``pequena janela'' da variável em torno de um valor $v$, fixando as demais variáveis.
 
 Se no PDP calculamos a média das previsões condicionais para cada valor da variável explicativa em análise, no cálculo do ALE, consideramos a distribuição marginal em cada valor do intervalo que ela varia. Em outras palavras, isso significa que temos que definir uma vizinhança. Por exemplo, para o cálculo do efeito de um sapato tamanho $40$ no valor predito das vendas, podemos calcular a média das previsões de todos os sapatos vendidos entre $38$ e $42$.
 
@@ -79,16 +79,12 @@ Se no PDP calculamos a média das previsões condicionais para cada valor da var
 
 Na Figura \ref{fig:imagem_ale} é ilustrado exatamente o cenário em que temos duas variáveis correlacionadas. Nesse caso, $x_1$ é correlacionada com $x_2$. Primeiro, a variável $x_1$ é separada em intervalos representados pelas linhas verticais, $([z_{0,1},z_{1,1}],[z_{1,1},z_{2,1}])$, por exemplo. Para os pontos em um determinado intervalo, é calculada a diferença na predição substituindo tais pontos originais pelos extremos do intervalo em que eles estão. Essas diferenças são posteriormente acumuladas e centralizadas.
 
-Em outras palavras, os gráficos de ALE calculam a média das alterações nas previsões e as acumulam nesse intervalo definido, que é menor que o intervalo de possíveis valores que a variável assume \cite{ale}. 
+Em outras palavras, os gráficos de ALE calculam a média das alterações nas previsões e as acumulam nesse intervalo definido, que é menor que o intervalo de possíveis valores que a variável assume [@ale]. 
 
 
 Retomando os subconjuntos de variáveis $x_S$ e $x_C$, tal que $x_S$ é um subconjunto das variáveis explicativas de $X$ que utilizaremos no gráfico, e $x_C$ o subconjunto complementar das variáveis utilizadas no ajuste do modelo, temos:
 
-\begin{align}
-  \hat{f}_{x_S,ALE} (x_S) & = 
-\int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - \text{constant} \\
-& =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - \text{constant}  
-\end{align}
+$$ \hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\& =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant $$
 
 Com a integral sobre $z$, acumulamos os gradientes locais ao longo do intervalo do subconjunto $x_S$, o que nos trás o efeito das alterações na predição. Outro ponto é que ao subtrairmos uma constante dos resultados, centralizamos o gráfico ALE, assim o efeito médio sobre os dados é zero.
 

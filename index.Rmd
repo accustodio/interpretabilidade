@@ -9,14 +9,20 @@ biblio-style: apalike
 link-citations: yes
 ---
 
-# Informações
+# Sobre esse material
 
-Esse é um material com conteúdo sobre técnicas de interpretabilidade no contexto de Ciência de Dados.
+Esse é um conteúdo sobre técnicas de interpretabilidade, iniciado durante o desenvolvimento da minha dissertação de mestrado, sob orientação do [Professor Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati), realizado na [Universidade Federal do ABC](https://www.ufabc.edu.br/).
 
-\@ref(intro)
+O objetivo desse material é apresentar algumas ferramentas que auxiliam na interpretação de predições de modelos opacos/modelos caixa-preta. 
 
 
 
+
+```{r echo=FALSE, out.width="60%",fig.align = 'center', fig.cap="Fonte: Capgemini - [Explainable AI- why is there a need to explain?](https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/)"}
+knitr::include_graphics("https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2020/03/Explanable-AI.jpg?w=960")
+```
+
+ 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(

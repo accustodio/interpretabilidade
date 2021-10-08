@@ -7,10 +7,10 @@ algoritmo-de-contratação-sexista
 algoritmo-de-classificação-de-imagens
 caracteristicas
 interpglobal
-interplocal
-conclusao
 gráfico-de-dependência-parcial-partial-dependence-plot---pdp
 vantagens-e-desvantagens
 esperança-condicional-individual-individual-conditional-expectation---ice
 vantagens-e-desvantagens-1
 efeitos-acumulados-locais-accumulated-local-effects---ale
+interplocal
+conclusao

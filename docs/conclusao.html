@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="Chapter 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
+  <title>Capítulo 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Capítulo 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Capítulo 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Capítulo 6 Conclusões e Discussões | Material sobre técnicas de interpretabilidade" />
   
   
   
@@ -24,7 +24,6 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +77,15 @@
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
-<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a><ul>
+<li class="chapter" data-level="4.1" data-path="interpglobal.html"><a href="interpglobal.html#gráfico-de-dependência-parcial-partial-dependence-plot---pdp"><i class="fa fa-check"></i><b>4.1</b> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="interpglobal.html"><a href="interpglobal.html#esperança-condicional-individual-individual-conditional-expectation---ice"><i class="fa fa-check"></i><b>4.2</b> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens-1"><i class="fa fa-check"></i><b>4.2.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="interpglobal.html"><a href="interpglobal.html#efeitos-acumulados-locais-accumulated-local-effects---ale"><i class="fa fa-check"></i><b>4.3</b> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
 <li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -103,7 +110,7 @@
 
             <section class="normal" id="section-">
 <div id="conclusao" class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> Conclusões e Discussões</h1>
+<h1><span class="header-section-number">Capítulo 6</span> Conclusões e Discussões</h1>
 <p>Entendemos que os métodos de interpretabilidade são muito úteis quando utilizamos técnicas de modelagem não interpretáveis, tanto os métodos mais visuais quanto os que estimam outro modelo, por exemplo, nos ajudam a entender o porquê da predição e desmistificar qual o impacto das variáveis explicativas na predição final.</p>
 <p>Com os métodos visuais PDP, ICE e ALE temos a facilidade no entendimento de como as variáveis impactam na predição. O LIME e os valores  nos permitem analisar mais minuciosamente o porque dos valores preditos. A combinação dessas técnicas é muito informativa, pois avaliamos a questão de interpretabilidade de uma maneira mais completa e de diferentes pontos da explicação.</p>
 <p>É importante ressaltar que mesmo com o auxílio de ferramentas de interpretabilidade, o uso de modelos opacos precisa ser avaliado com cautela, pois como citado em , algumas vezes tem-se a crença que esses modelos têm a capacidade de descobrir padrões ocultos nos dados, mas em muitos casos um modelo transparente pode ser capaz de descobrir esses mesmos padrões, sendo importante considerar o processo geral do desenvolvimento de um modelo, desde a seleção dos dados e os tratamentos das variáveis, e não apenas qual a técnica de modelagem será utilizada. No próximo capítulo traremos uma aplicação em dados de um problema , considerando um modelo interpretável e um modelo opaco, a fim de observar os resultados das duas diferentes abordagens.</p>

@@ -1,5 +1,8 @@
 # Introdução {#intro}
 
+"Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos."
+
+Marie Curie
 
 Considerar a interpretabilidade é muito importante quando falamos de predições e classificações resultantes de um modelo. Buscar a interpretação de uma predição nos ajuda a entender como chegamos naquele resultado, quais características impactaram nele, além de nos ajudar a tomar decisões com mais responsabilidade e segurança.
 

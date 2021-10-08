@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="Chapter 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
+  <title>Capítulo 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Capítulo 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Capítulo 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Capítulo 4 Interpretabilidade Global | Material sobre técnicas de interpretabilidade" />
   
   
   
@@ -24,7 +24,6 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -111,7 +110,7 @@
 
             <section class="normal" id="section-">
 <div id="interpglobal" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Interpretabilidade Global</h1>
+<h1><span class="header-section-number">Capítulo 4</span> Interpretabilidade Global</h1>
 <p>Algumas técnicas de interpretabilidade de modelos opacos facilitam o entendimento dos seus resultados de uma perspectiva global, ou seja, as relações aprendidas entre a variável resposta e as variáveis explicativas do ponto de vista de um conjunto de dados e o modelo previamente ajustado.</p>
 <div id="gráfico-de-dependência-parcial-partial-dependence-plot---pdp" class="section level2">
 <h2><span class="header-section-number">4.1</span> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</h2>
@@ -155,7 +154,9 @@
 <p>Na Figura  é ilustrado exatamente o cenário em que temos duas variáveis correlacionadas. Nesse caso, <span class="math inline">\(x_1\)</span> é correlacionada com <span class="math inline">\(x_2\)</span>. Primeiro, a variável <span class="math inline">\(x_1\)</span> é separada em intervalos representados pelas linhas verticais, <span class="math inline">\(([z_{0,1},z_{1,1}],[z_{1,1},z_{2,1}])\)</span>, por exemplo. Para os pontos em um determinado intervalo, é calculada a diferença na predição substituindo tais pontos originais pelos extremos do intervalo em que eles estão. Essas diferenças são posteriormente acumuladas e centralizadas.</p>
 <p>Em outras palavras, os gráficos de ALE calculam a média das alterações nas previsões e as acumulam nesse intervalo definido, que é menor que o intervalo de possíveis valores que a variável assume <span class="citation">(Apley and Zhu <a href="#ref-ale">2016</a>)</span>.</p>
 <p>Retomando os subconjuntos de variáveis <span class="math inline">\(x_S\)</span> e <span class="math inline">\(x_C\)</span>, tal que <span class="math inline">\(x_S\)</span> é um subconjunto das variáveis explicativas de <span class="math inline">\(X\)</span> que utilizaremos no gráfico, e <span class="math inline">\(x_C\)</span> o subconjunto complementar das variáveis utilizadas no ajuste do modelo, temos:</p>
-<p><span class="math display">\[ \hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\&amp; =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant \]</span></p>
+<p><span class="math display">\[
+\hat{f}_{x_S,ALE} (x_S)  = \int_{z_{0,1}}^{x_S} E_{x_C|x_S}[\hat{f}^S(X)|x_S = z_S] \partial_{z_S} - constant \\ =  \int_{z_{0,1}}^{x_S} \int_{x_C} \hat{f}^S(z_S,x_C)P(x_C|z_S) \delta_{z_S}\delta_{z_S} - constant 
+\]</span></p>
 <p>Com a integral sobre <span class="math inline">\(z\)</span>, acumulamos os gradientes locais ao longo do intervalo do subconjunto <span class="math inline">\(x_S\)</span>, o que nos trás o efeito das alterações na predição. Outro ponto é que ao subtrairmos uma constante dos resultados, centralizamos o gráfico ALE, assim o efeito médio sobre os dados é zero.</p>
 
 <p>Uma das vantagens desse método é a facilidade de entendimento. Visualmente, ele representa o efeito relativo na predição quando alteramos uma variável, condicionado em um determinado valor. Outra vantagem é que os gráficos ALE não são enviesados, pois funcionam quando variáveis são correlacionadas.</p>

@@ -24,7 +24,6 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +77,15 @@
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
-<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a><ul>
+<li class="chapter" data-level="4.1" data-path="interpglobal.html"><a href="interpglobal.html#gráfico-de-dependência-parcial-partial-dependence-plot---pdp"><i class="fa fa-check"></i><b>4.1</b> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="interpglobal.html"><a href="interpglobal.html#esperança-condicional-individual-individual-conditional-expectation---ice"><i class="fa fa-check"></i><b>4.2</b> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens-1"><i class="fa fa-check"></i><b>4.2.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="interpglobal.html"><a href="interpglobal.html#efeitos-acumulados-locais-accumulated-local-effects---ale"><i class="fa fa-check"></i><b>4.3</b> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
 <li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -105,16 +112,16 @@
 <div id="header">
 <h1 class="title">Material sobre técnicas de interpretabilidade</h1>
 <p class="author"><em>Angélica C. Cruz Custódio</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-09-07</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>Última atualização: 07/10/2021</em></p>
 </div>
 <div id="sobre-esse-material" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Sobre esse material</h1>
+<h1><span class="header-section-number">Capítulo 1</span> Sobre esse material</h1>
 <p>Esse é um conteúdo sobre técnicas de interpretabilidade, iniciado durante o desenvolvimento da minha dissertação de mestrado, sob orientação do <a href="https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati">Professor Ronaldo Cristiano Prati</a>, realizado na <a href="https://www.ufabc.edu.br/">Universidade Federal do ABC</a>.</p>
 <p>O objetivo desse material é apresentar algumas ferramentas que auxiliam na interpretação de predições de modelos opacos/modelos caixa-preta.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2020/03/Explanable-AI.jpg?w=960" alt="Fonte: Capgemini - [Explainable AI- why is there a need to explain?](https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/)" width="60%" />
 <p class="caption">
-Figure 1.1: Fonte: Capgemini - <a href="https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/">Explainable AI- why is there a need to explain?</a>
+Figura 1.1: Fonte: Capgemini - <a href="https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/">Explainable AI- why is there a need to explain?</a>
 </p>
 </div>
 

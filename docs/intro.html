@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Introdução | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <title>Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
   
   
   
@@ -24,7 +24,6 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +77,15 @@
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
-<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a><ul>
+<li class="chapter" data-level="4.1" data-path="interpglobal.html"><a href="interpglobal.html#gráfico-de-dependência-parcial-partial-dependence-plot---pdp"><i class="fa fa-check"></i><b>4.1</b> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="interpglobal.html"><a href="interpglobal.html#esperança-condicional-individual-individual-conditional-expectation---ice"><i class="fa fa-check"></i><b>4.2</b> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens-1"><i class="fa fa-check"></i><b>4.2.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="interpglobal.html"><a href="interpglobal.html#efeitos-acumulados-locais-accumulated-local-effects---ale"><i class="fa fa-check"></i><b>4.3</b> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
 <li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -103,7 +110,9 @@
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introdução</h1>
+<h1><span class="header-section-number">Capítulo 2</span> Introdução</h1>
+<p>“Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos.”</p>
+<p>Marie Curie</p>
 <p>Considerar a interpretabilidade é muito importante quando falamos de predições e classificações resultantes de um modelo. Buscar a interpretação de uma predição nos ajuda a entender como chegamos naquele resultado, quais características impactaram nele, além de nos ajudar a tomar decisões com mais responsabilidade e segurança.</p>
 <p>Ao falarmos de interpretabilidade, uma possível abordagem é utilizar técnicas de modelagem que permitem entender diretamente como as variáveis explicativas se relacionam com a variável resposta: os Modelos Interpretáveis. Regressão Linear e Regressão Logística <span class="citation">(Molnar <a href="#ref-molnar2019">2019</a>)</span> são algumas dessas técnicas que podem ser consideradas interpretáveis, dependendo do nível de complexidade na combinação das suas variáveis, das regras e também do nível de domínio do assunto de quem está analisando-as <span class="citation">(Doshi-Velez <a href="#ref-doshivelez">2017</a>)</span>.</p>
 <p>Entretanto, quando utilizamos modelos não interpretáveis, também conhecidos como Modelos Opacos ou “Caixa Preta”, não é possível entender diretamente a relação entre as variáveis explicativas e a variável resposta. Nesses modelos a predição pode ser resultado de um conjunto complexo de regras ou as relações não se apresentam de forma direta e linear, como em Florestas Aleatórias <span class="citation">(Breiman <a href="#ref-breiman2001random">2001</a>)</span>, as Máquinas de Vetores de Suporte <span class="citation">(Shawe-Taylor and Cristianini <a href="#ref-shawe2000support">2000</a>)</span> (SVM, do termo em inglês <em>Support Vector Machine</em>), e as Redes Neurais Profundas <span class="citation">(Liu et al. <a href="#ref-liu2017survey">2017</a>)</span>.</p>
@@ -112,27 +121,26 @@
 <p>Para ilustrar algumas dessas questões, trouxemos exemplos reais em que, por não terem considerado a etapa de interpretabilidade no processo de desenvolvimento do modelo, implica como resultado classificações incorretas e com impactos negativos, devido aos vieses na informações do treinamento do algoritmo.</p>
 <div id="algoritmo-de-contratação-sexista" class="section level2">
 <h2><span class="header-section-number">2.1</span> Algoritmo de Contratação sexista</h2>
-<p>Segundo a agência  <span class="citation">(Reuters <a href="#ref-amazon1">2018</a>)</span>, com a proposta de elevar o nível de tomada de decisão automática, a empresa Amazon desenvolveu internamente uma ferramenta experimental de contratação utilizando inteligência artificial para fornecer aos candidatos pontuações que variam de uma a cinco estrelas. Entretanto, a empresa percebeu que seu novo método não classificava os candidatos de forma neutra em termos de gênero.</p>
+<p>Segundo a agência <em>Reuters</em> <span class="citation">(Reuters <a href="#ref-amazon1">2018</a>)</span>, com a proposta de elevar o nível de tomada de decisão automática, a empresa Amazon desenvolveu internamente uma ferramenta experimental de contratação utilizando inteligência artificial para fornecer aos candidatos pontuações que variam de uma a cinco estrelas. Entretanto, a empresa percebeu que seu novo método não classificava os candidatos de forma neutra em termos de gênero.</p>
 <p>Isso ocorreu porque, para classificar os candidatos, o modelo foi treinado utilizando a base histórica dos currículos enviados à empresa nos últimos 10 anos. Nessa base era refletida a dominância masculina que existe em toda a indústria de tecnologia.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="https://sloanreview.mit.edu/wp-content/uploads/2017/12/FR-Beck-Libert-Gender-Inequality-Equality-Issues-1200-300x300.jpg" alt="Fonte: [MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?](https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/)" width="40%" />
 <p class="caption">
-Figure 2.1: Fonte: <a href="https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/">MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?</a>
+Figura 2.1: Fonte: <a href="https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/">MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?</a>
 </p>
 </div>
-<p>De acordo com a reportagem da  <span class="citation">(Guardian <a href="#ref-amazon2">2018</a>)</span>, cerca de 55% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos CareerBuilder.</p>
+<p>De acordo com a reportagem da <em>The Guardian</em> <span class="citation">(Guardian <a href="#ref-amazon2">2018</a>)</span>, cerca de 55% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos <a href="https://www.careerbuilder.com/">CareerBuilder</a>.</p>
 <p>Esse tipo de experimento que a <span class="citation">(Reuters <a href="#ref-amazon1">2018</a>)</span> relatou, é um exemplo sobre as implicações éticas que um modelo pode ter e o quão importante e urgente é a preocupação de interpretar o modelo.</p>
 </div>
 <div id="algoritmo-de-classificação-de-imagens" class="section level2">
 <h2><span class="header-section-number">2.2</span> Algoritmo de classificação de imagens</h2>
-<p>Em <span class="citation">(Lapuschkin et al. <a href="#ref-cavalo">2019</a>)</span> foi estudado um exemplo em que o algoritmo de aprendizado de máquina encontrou uma característica curiosa nas imagens para classificá-las. O objetivo era classificação entre cavalo, pessoa, trem ou carro. Entretanto, para classificar como cavalo o algoritmo considera como área relevante a marca d’água do fotógrafo que estava na base de treinamento do modelo. Isso justifica porque, na base de teste, uma imagem de carro que contém a marca d’água é classificada como cavalo, como visto na Figura .</p>
+<p>Em <span class="citation">(Lapuschkin et al. <a href="#ref-cavalo">2019</a>)</span> foi estudado um exemplo em que o algoritmo de aprendizado de máquina encontrou uma característica curiosa nas imagens para classificá-las. O objetivo era classificação entre cavalo, pessoa, trem ou carro. Entretanto, para classificar como cavalo o algoritmo considera como área relevante a marca d’água do fotógrafo que estava na base de treinamento do modelo. Isso justifica porque, na base de teste, uma imagem de carro que contém a marca d’água é classificada como cavalo, como visto na figura abaixo.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="imgs/imagem_cavalo.png" alt="Fonte: " width="70%" />
 <p class="caption">
-Figure 2.2: Fonte:
+Figura 2.2: Fonte:
 </p>
 </div>
-
 <p>Nesse caso, a marca d’água do fotógrafo na base de treinamento atrapalhou a classificação, e quando observamos na imagem quais áreas foram mais relevantes para aquela rotulação como cavalo encontramos a resposta do viés do algoritmo.</p>
 
 </div>

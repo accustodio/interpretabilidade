@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  <title>Capítulo 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade</title>
+  <meta name="description" content="Capítulo 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Capítulo 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Capítulo 5 Interpretabilidade Local | Material sobre técnicas de interpretabilidade" />
   
   
   
@@ -24,7 +24,6 @@
 <meta name="author" content="Angélica C. Cruz Custódio" />
 
 
-<meta name="date" content="2021-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +77,15 @@
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="caracteristicas.html"><a href="caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Características dos métodos de interpretabilidade</a></li>
-<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a></li>
+<li class="chapter" data-level="4" data-path="interpglobal.html"><a href="interpglobal.html"><i class="fa fa-check"></i><b>4</b> Interpretabilidade Global</a><ul>
+<li class="chapter" data-level="4.1" data-path="interpglobal.html"><a href="interpglobal.html#gráfico-de-dependência-parcial-partial-dependence-plot---pdp"><i class="fa fa-check"></i><b>4.1</b> Gráfico de Dependência Parcial (<em>Partial Dependence Plot</em>) - PDP</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="interpglobal.html"><a href="interpglobal.html#esperança-condicional-individual-individual-conditional-expectation---ice"><i class="fa fa-check"></i><b>4.2</b> Esperança Condicional Individual (<em>Individual Conditional Expectation</em>) - ICE</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="interpglobal.html"><a href="interpglobal.html#vantagens-e-desvantagens-1"><i class="fa fa-check"></i><b>4.2.1</b> Vantagens e Desvantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="interpglobal.html"><a href="interpglobal.html#efeitos-acumulados-locais-accumulated-local-effects---ale"><i class="fa fa-check"></i><b>4.3</b> Efeitos Acumulados Locais (<em>Accumulated Local Effects</em>) - ALE</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interplocal.html"><a href="interplocal.html"><i class="fa fa-check"></i><b>5</b> Interpretabilidade Local</a></li>
 <li class="chapter" data-level="6" data-path="conclusao.html"><a href="conclusao.html"><i class="fa fa-check"></i><b>6</b> Conclusões e Discussões</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -103,7 +110,7 @@
 
             <section class="normal" id="section-">
 <div id="interplocal" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Interpretabilidade Local</h1>
+<h1><span class="header-section-number">Capítulo 5</span> Interpretabilidade Local</h1>
 <p>Técnicas de interpretabilidade local facilitam o entendimento de uma perspectiva micro do aprendizado de máquina entre o predito e as variáveis explicativas, como a relação entre a predição de uma observação e suas características correspondentes.</p>
 
 <p>Além de trabalharmos com perturbações nas variáveis explicativas, como nos métodos anteriores, uma abordagem interessante é a estimação de modelos mais simples, a partir das variáveis utilizadas no modelo e de sua predição, para explicar algumas predições específicas, que é o caso do LIME .</p>
@@ -112,7 +119,7 @@
 <p>Basicamente, ao querer entender porque o modelo <code>Caixa Preta'' fez uma certa predição, o LIME testa o que acontece com as predições quando você fornece variações de seus dados no modelo. Com essas amostras de valores perturbados e suas predições é gerado um novo conjunto de dados no qual é treinado um novo modelo, mas dessa vez um modelo interpretável, que será ponderado pela proximidade das unidades amostradas com a predição de interesse estabelecida desde o começo. É importante ressaltar que esse novo modelo ajustado deve ser uma boa aproximação local das predições do modelo</code>Caixa Preta’’, mas não precisa ser uma boa aproximação global e se ajustar a todo o conjunto de dados.</p>
 <p>Podemos definir a explicação local para uma predição <span class="math inline">\(x\)</span>, com o modelo <span class="math inline">\(g\)</span> que minimiza a perda <span class="math inline">\(L\)</span> medindo o quão perto ele está do modelo original <span class="math inline">\(f\)</span> e mantendo o nível de complexidade <span class="math inline">\(\Omega(g)\)</span> baixo.</p>
 <p><span class="math display">\[\begin{equation}
-  \text{explicação}(x)  = \argmin_{g \in G} L(f,g,\pi_x) + \Omega(g).
+  \text{explicação}(x)  = \arg\min_{g \in G} L(f,g,\pi_x) + \Omega(g).
 \end{equation}\]</span></p>
 
 <p>O exemplo sobre o classificador de  e Lobos citado em  ilustra bem o resultado do LIME usando imagens. Na Figura  temos um exemplo de um cachorro  que foi classificado pelo algoritmo como Lobo. Entretanto, quando utilizado o LIME para entender o porquê da predição é separado como importantes para aquela predição as áreas da imagem que contém neve, conforme destacado. Ou seja, o algoritmo não focava em alguma característica dos animais para diferenciá-los, mas sim no plano de fundo das imagens.</p>

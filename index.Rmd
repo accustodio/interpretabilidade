@@ -1,6 +1,5 @@
 --- 
-title: "Material sobre técnicas de interpretabilidade"
-author: "Angélica C. Cruz Custódio"
+title: "Interprete o seu modelo caixa-preta!"
 date: "Última atualização: `r format(Sys.Date(), '%d/%m/%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -13,16 +12,23 @@ link-citations: yes
 
 Esse é um conteúdo sobre técnicas de interpretabilidade, iniciado durante o desenvolvimento da minha dissertação de mestrado, sob orientação do [Professor Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati), realizado na [Universidade Federal do ABC](https://www.ufabc.edu.br/).
 
-O objetivo desse material é apresentar algumas ferramentas que auxiliam na interpretação de predições de modelos opacos/modelos caixa-preta. 
+## Autores
+
+- [Angélica C. Cruz Custódio](https://www.linkedin.com/in/angelicacustodio/)
+- [Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati)
+- E quem mais quiser contribuir - o conteúdo está aberto no [github](https://github.com/angelica93/interpretabilidade) e contribuições são bem-vindas :)
+
+## Alinhando Expectativas
+
+O objetivo desse material é apresentar algumas ferramentas de interpretabilidade utilizadas na interpretação de predições. Acredito que essas ferramentas são aliadas importantes quando utilizamos modelos caixa-preta, nos possibilitando sair do lugar no qual não enxergamos a relação das variáveis explicativas com o predito e nos leva para um lugar de questionamentos, análises e possíveis compreensões.
+
+Esse conteúdo é um guia para quem tem interesse nesse tópico - importante e por vezes pouco explorado - dentro do universo de Ciência de Dados.
+
+__"Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos." - Marie Curie__
 
 
 
 
-```{r echo=FALSE, out.width="60%",fig.align = 'center', fig.cap="Fonte: Capgemini - [Explainable AI- why is there a need to explain?](https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/)"}
-knitr::include_graphics("https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2020/03/Explanable-AI.jpg?w=960")
-```
-
- 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(

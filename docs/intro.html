@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade</title>
-  <meta name="description" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <title>Capítulo 2 Introdução | Interprete o seu modelo caixa-preta!</title>
+  <meta name="description" content="Capítulo 2 Introdução | Interprete o seu modelo caixa-preta!" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <meta property="og:title" content="Capítulo 2 Introdução | Interprete o seu modelo caixa-preta!" />
   <meta property="og:type" content="book" />
   
   
@@ -16,12 +16,11 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 2 Introdução | Material sobre técnicas de interpretabilidade" />
+  <meta name="twitter:title" content="Capítulo 2 Introdução | Interprete o seu modelo caixa-preta!" />
   
   
   
 
-<meta name="author" content="Angélica C. Cruz Custódio" />
 
 
 
@@ -71,7 +70,10 @@
 <li><a href="./">Material sobre técnicas de interpretabilidade</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sobre esse material</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sobre esse material</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#autores"><i class="fa fa-check"></i><b>1.1</b> Autores</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#alinhando-expectativas"><i class="fa fa-check"></i><b>1.2</b> Alinhando Expectativas</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#algoritmo-de-contratação-sexista"><i class="fa fa-check"></i><b>2.1</b> Algoritmo de Contratação sexista</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#algoritmo-de-classificação-de-imagens"><i class="fa fa-check"></i><b>2.2</b> Algoritmo de classificação de imagens</a></li>
@@ -101,7 +103,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Material sobre técnicas de interpretabilidade</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Interprete o seu modelo caixa-preta!</a>
           </h1>
         </div>
 
@@ -111,10 +113,14 @@
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Introdução</h1>
-<p>“Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos.”</p>
-<p>Marie Curie</p>
 <p>Considerar a interpretabilidade é muito importante quando falamos de predições e classificações resultantes de um modelo. Buscar a interpretação de uma predição nos ajuda a entender como chegamos naquele resultado, quais características impactaram nele, além de nos ajudar a tomar decisões com mais responsabilidade e segurança.</p>
 <p>Ao falarmos de interpretabilidade, uma possível abordagem é utilizar técnicas de modelagem que permitem entender diretamente como as variáveis explicativas se relacionam com a variável resposta: os Modelos Interpretáveis. Regressão Linear e Regressão Logística <span class="citation">(Molnar <a href="#ref-molnar2019">2019</a>)</span> são algumas dessas técnicas que podem ser consideradas interpretáveis, dependendo do nível de complexidade na combinação das suas variáveis, das regras e também do nível de domínio do assunto de quem está analisando-as <span class="citation">(Doshi-Velez <a href="#ref-doshivelez">2017</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2020/03/Explanable-AI.jpg?w=960" alt="Fonte: Capgemini - [Explainable AI- why is there a need to explain?](https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/)" width="60%" />
+<p class="caption">
+Figura 2.1: Fonte: Capgemini - <a href="https://www.capgemini.com/gb-en/2020/04/explainable-ai-why-is-there-a-need-to-explain/">Explainable AI- why is there a need to explain?</a>
+</p>
+</div>
 <p>Entretanto, quando utilizamos modelos não interpretáveis, também conhecidos como Modelos Opacos ou “Caixa Preta”, não é possível entender diretamente a relação entre as variáveis explicativas e a variável resposta. Nesses modelos a predição pode ser resultado de um conjunto complexo de regras ou as relações não se apresentam de forma direta e linear, como em Florestas Aleatórias <span class="citation">(Breiman <a href="#ref-breiman2001random">2001</a>)</span>, as Máquinas de Vetores de Suporte <span class="citation">(Shawe-Taylor and Cristianini <a href="#ref-shawe2000support">2000</a>)</span> (SVM, do termo em inglês <em>Support Vector Machine</em>), e as Redes Neurais Profundas <span class="citation">(Liu et al. <a href="#ref-liu2017survey">2017</a>)</span>.</p>
 <p>Nesses casos não fica claro o impacto de cada variável e, como consequência, podemos ter uma série de problemas com variáveis que não deveriam ser relevantes e erroneamente são consideradas pelo modelo, seja por um viés de seleção das amostras ou por um viés histórico sócio-cultural que acaba refletindo na base de dados utilizada no treinamento do modelo. Esse cenário nos possibilita tomar decisões com base em predições enviesadas sem sequer saber disso, o que pode levar a repetição de padrões e processos discriminatórios que impactam diretamente na desigualdade entre indivíduos, como foi abordado por Cathy O’Neil em <span class="citation">(O’Neil <a href="#ref-cath">2016</a>)</span>.</p>
 <p>A discussão sobre viés em algoritmos está permeada por muitas questões éticas e morais. Como apontado em <span class="citation">(“Algoritmos de Inteligência Artificial E Vieses: Uma Reflexão Sobre ética E Justiça” <a href="#ref-programaria">2020</a>)</span>, essa discussão implica falar sobre questões como gênero, raça, idade, orientação afetiva-sexual, linguagem, cultura, deficiência, condição econômica, entre outros fatores e suas interseccionalidades.</p>
@@ -126,7 +132,7 @@
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="https://sloanreview.mit.edu/wp-content/uploads/2017/12/FR-Beck-Libert-Gender-Inequality-Equality-Issues-1200-300x300.jpg" alt="Fonte: [MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?](https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/)" width="40%" />
 <p class="caption">
-Figura 2.1: Fonte: <a href="https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/">MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?</a>
+Figura 2.2: Fonte: <a href="https://sloanreview.mit.edu/article/could-ai-be-the-cure-for-workplace-gender-inequality/">MIT Sloan - Could AI Be the Cure for Workplace Gender Inequality?</a>
 </p>
 </div>
 <p>De acordo com a reportagem da <em>The Guardian</em> <span class="citation">(Guardian <a href="#ref-amazon2">2018</a>)</span>, cerca de 55% dos gerentes de recursos humanos dos EUA disseram que a inteligência artificial seria uma parte regular de seu trabalho nos próximos cinco anos, segundo uma pesquisa de 2017 realizada pela empresa de software de talentos <a href="https://www.careerbuilder.com/">CareerBuilder</a>.</p>
@@ -138,7 +144,7 @@ Figura 2.1: Fonte: <a href="https://sloanreview.mit.edu/article/could-ai-be-the-
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="imgs/imagem_cavalo.png" alt="Fonte: " width="70%" />
 <p class="caption">
-Figura 2.2: Fonte:
+Figura 2.3: Fonte:
 </p>
 </div>
 <p>Nesse caso, a marca d’água do fotógrafo na base de treinamento atrapalhou a classificação, e quando observamos na imagem quais áreas foram mais relevantes para aquela rotulação como cavalo encontramos a resposta do viés do algoritmo.</p>

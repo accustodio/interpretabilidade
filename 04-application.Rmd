@@ -4,7 +4,7 @@
 Técnicas de interpretabilidade local facilitam o entendimento de uma perspectiva micro do aprendizado de máquina entre o predito e as variáveis explicativas, como a relação entre a predição de uma observação e suas características correspondentes.
 
 
-## Local Interpretable Model-Agnostic Explanations - LIME
+## *Local Interpretable Model-Agnostic Explanations* - LIME
 
 Além de trabalharmos com perturbações nas variáveis explicativas, como nos métodos anteriores, uma abordagem interessante é a estimação de modelos mais simples, a partir das variáveis utilizadas no modelo e de sua predição, para explicar algumas predições específicas, que é o caso do LIME [@lime].
 
@@ -43,7 +43,7 @@ Por outro lado, a definição de vizinhança é uma desvantagem desse método, u
 
 ## Valores de Shapley 
 
-O algoritmo baseado nos valores de **Shapley** é um método da Teoria de Jogos, apresentado em @shapley_gt, que propõe uma solução de distribuição justa de ganhos e custos para vários jogadores que trabalham cooperativamente. Ela se aplica, principalmente, em situações em que as contribuições de cada jogador são desiguais, mas trabalham com o mesmo objetivo.
+O algoritmo baseado nos valores de *Shapley* é um método da Teoria de Jogos, apresentado em @shapley_gt, que propõe uma solução de distribuição justa de ganhos e custos para vários jogadores que trabalham cooperativamente. Ela se aplica, principalmente, em situações em que as contribuições de cada jogador são desiguais, mas trabalham com o mesmo objetivo.
 
 A conexão entre essa solução de Teoria de Jogos e a interpretabilidade de modelos de aprendizado de máquina acontece considerando o jogo como uma tarefa de previsão para uma única observação do conjunto de dados. O ganho é a diferença entre a predição real para a observação e a previsão média para todas as demais observações. Além disso, os jogadores são os valores das variáveis para a observação selecionada, que colaboram para receber o ganho, em outras palavras, para prever um determinado valor. 
 

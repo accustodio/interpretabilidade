@@ -43,7 +43,7 @@ Outro ponto importante é a suposição de independência: supõe-se que as vari
 
 ## Esperança Condicional Individual (_Individual Conditional Expectation_) - ICE
 
-Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em [@ice]. Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo. 
+Um gráfico equivalente ao PDP, mas com uma visão individual para cada observação da base de dados é o ICE, apresentado em @ice. Enquanto o PDP tem uma curva média para representar o efeito de uma ou duas variáveis, no ICE temos uma curva para cada indivíduo. 
 
 O cálculo do ICE é realizado mantendo os valores das demais variáveis e modificando apenas o da variável escolhida para obter as novas predições através do modelo já ajustado.
 
@@ -51,7 +51,7 @@ O cálculo do ICE é realizado mantendo os valores das demais variáveis e modif
 
 Definindo matematicamente as curvas ICE, seria que para cada elemento $i$ em $\{(x_S^{(i)},x_C^{(i)}\}_{i=1}^N$ uma curva $\hat{f}_S^{(i)}$ é calculada em $x_S^{(i)}$, enquanto $x_C^{(i)}$ é mantido fixo.
 
-Vemos também em [@ice] uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos $k$ curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote **ICEbox**, implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.
+Vemos também em @ice uma recomendação de utilizar um agrupamento das curvas ICE, ou seja, ao invés de considerar uma curva para cada indivíduo consideramos $k$ curvas dos indivíduos similarmente agrupados. Essa clusterização está disponível no pacote **ICEbox**, implementado pelos autores do artigo. No presente trabalho, seguimos essa recomendação e utilizamos a visualização considerando clusters na análise dos gráficos ICE.
 
 
 
@@ -65,17 +65,16 @@ Dependendo do tamanho do conjunto de dados e de sua distribuição, e por trazer
 
 ## Efeitos Acumulados Locais (_Accumulated Local Effects_) - ALE 
 
-Em [@molnar2019] temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor $v$ de determinada variável, independentemente se aquele valor $v$ faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma ``pequena janela'' da variável em torno de um valor $v$, fixando as demais variáveis.
+Em @molnar2019 temos uma comparação muito interessante e didática das técnicas PDP e ALE. No PDP, há o cenário de mostrar o que, em média, é predito pelo modelo quando cada observação tem um valor $v$ de determinada variável, independentemente se aquele valor $v$ faz sentido no contexto das demais varáveis ou não. No entanto, com o ALE, o cenário é analisar como o valor predito pelo modelo muda considerando uma **pequena janela** da variável em torno de um valor $v$, fixando as demais variáveis.
 
 Se no PDP calculamos a média das previsões condicionais para cada valor da variável explicativa em análise, no cálculo do ALE, consideramos a distribuição marginal em cada valor do intervalo que ela varia. Em outras palavras, isso significa que temos que definir uma vizinhança. Por exemplo, para o cálculo do efeito de um sapato tamanho $40$ no valor predito das vendas, podemos calcular a média das previsões de todos os sapatos vendidos entre $38$ e $42$.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.6\textwidth]{ale_exp.png}
-\caption{Explicação do ALE. Imagem de \cite{molnar2019}.}
-\label{fig:imagem_ale}
-\centering
-\end{figure}
+```{r imagem_ale, echo=FALSE, out.width="70%",fig.align = 'center', fig.cap="Explicação do ALE. <br> Fonte: @molnar2019. "}
+# knitr::include_graphics("imgs/ale_exp.png")
+```
+
+
+
 
 Na Figura \ref{fig:imagem_ale} é ilustrado exatamente o cenário em que temos duas variáveis correlacionadas. Nesse caso, $x_1$ é correlacionada com $x_2$. Primeiro, a variável $x_1$ é separada em intervalos representados pelas linhas verticais, $([z_{0,1},z_{1,1}],[z_{1,1},z_{2,1}])$, por exemplo. Para os pontos em um determinado intervalo, é calculada a diferença na predição substituindo tais pontos originais pelos extremos do intervalo em que eles estão. Essas diferenças são posteriormente acumuladas e centralizadas.
 
@@ -93,11 +92,11 @@ Com a integral sobre $z$, acumulamos os gradientes locais ao longo do intervalo 
 
 
 
-\subsubsection{Vantagens e Desvantagens}
+### Vantagens e Desvantagens
 
 Uma das vantagens desse método é a facilidade de entendimento. Visualmente, ele representa o efeito relativo na predição quando alteramos uma variável, condicionado em um determinado valor. Outra vantagem é que os gráficos ALE  não são enviesados, pois funcionam quando variáveis são correlacionadas. 
 
-Entretanto, dependendo do número de intervalos, os gráficos ALE podem ficar um pouco instáveis. Um número alto de intervalos tendem a ter muitos pequenos altos e baixos. Reduzir o número de intervalos seria uma alternativa, pois torna as estimativas mais estáveis. Entretanto, ele pode suavizar a complexidade do modelo de predição. Temos então um \textit{trade-off} entre um número alto ou baixo de intervalos e não existe uma solução perfeita para definir o número de intervalos \cite{molnar2019}.
+Entretanto, dependendo do número de intervalos, os gráficos ALE podem ficar um pouco instáveis. Um número alto de intervalos tendem a ter muitos pequenos altos e baixos. Reduzir o número de intervalos seria uma alternativa, pois torna as estimativas mais estáveis. Entretanto, ele pode suavizar a complexidade do modelo de predição. Temos então um *trade-off* entre um número alto ou baixo de intervalos e não existe uma solução perfeita para definir o número de intervalos [@molnar2019].
 
 Outro ponto interessante é que, se compararmos ao PDP, temos as curvas ICE que o complementa e ajuda a entender a variação das predições na individualidade do conjunto de dados, observando o efeito diferente para subconjuntos dos dados. Nos gráficos ALE, só se pode verificar por intervalo se o efeito é diferente, e não é possível analisar individualmente com um gráfico auxiliar o mesmo efeito.
 

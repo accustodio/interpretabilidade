@@ -10,13 +10,13 @@ link-citations: yes
 
 # Sobre esse material
 
-Esse é um conteúdo sobre técnicas de interpretabilidade, iniciado durante o desenvolvimento da minha dissertação de mestrado, sob orientação do [Professor Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati), realizado na [Universidade Federal do ABC](https://www.ufabc.edu.br/).
+Esse é um conteúdo sobre técnicas de interpretabilidade, iniciado durante o desenvolvimento da dissertação de mestrado de [Angélica C. Cruz Custódio](https://www.linkedin.com/in/angelicacustodio/), sob orientação do [Professor Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati), realizado na [Universidade Federal do ABC](https://www.ufabc.edu.br/).
 
 ## Autores
 
 - [Angélica C. Cruz Custódio](https://www.linkedin.com/in/angelicacustodio/)
 - [Ronaldo Cristiano Prati](https://www.ufabc.edu.br/ensino/docentes/ronaldo-cristiano-prati)
-- E quem mais quiser contribuir - o conteúdo está aberto no [github](https://github.com/angelica93/interpretabilidade) e contribuições são bem-vindas :)
+- E quem mais quiser contribuir - o conteúdo está aberto no [GitHub](https://github.com/accustodio/interpretabilidade) e contribuições são bem-vindas :)
 
 ## Alinhando Expectativas
 
@@ -24,9 +24,7 @@ O objetivo desse material é apresentar algumas ferramentas de interpretabilidad
 
 Esse conteúdo é um guia para quem tem interesse nesse tópico - importante e por vezes pouco explorado - dentro do universo de Ciência de Dados.
 
-__"Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos." - Marie Curie__
-
-
+> "Nada na vida deve ser temido, somente compreendido. Agora é hora de compreender mais para temer menos." - *Marie Curie*
 
 
 ```{r include=FALSE}

@@ -4,19 +4,18 @@
 Técnicas de interpretabilidade local facilitam o entendimento de uma perspectiva micro do aprendizado de máquina entre o predito e as variáveis explicativas, como a relação entre a predição de uma observação e suas características correspondentes.
 
 
-\subsection{\textit{Local Interpretable Model-Agnostic Explanations} - LIME}
+## *Local Interpretable Model-Agnostic Explanations* - LIME
 
-Além de trabalharmos com perturbações nas variáveis explicativas, como nos métodos anteriores, uma abordagem interessante é a estimação de modelos mais simples, a partir das variáveis utilizadas no modelo e de sua predição, para explicar algumas predições específicas, que é o caso do LIME \cite{lime}.
+Além de trabalharmos com perturbações nas variáveis explicativas, como nos métodos anteriores, uma abordagem interessante é a estimação de modelos mais simples, a partir das variáveis utilizadas no modelo e de sua predição, para explicar algumas predições específicas, que é o caso do LIME [@lime].
 
 O nome do método pode ser entendido por partes:
 
-\begin{description}
-    \item[Local:] Vizinhança é delimitada com base na distância dos registros;
-    \item[Interpretável:] Estimação de Regressão Linear para ajustar os dados, que é um modelo interpretável;
-    \item[Explanações independentes do modelo:] O método é independente de qual algoritmo foi utilizado para obtermos as predições.
-\end{description}
+  - **Local:** Vizinhança é delimitada com base na distância dos registros;
+  - **Interpretável:** Estimação de Regressão Linear para ajustar os dados, que é um modelo interpretável;
+  - **Explanações independentes do modelo:** O método é independente de qual algoritmo foi utilizado para obtermos as predições.
 
-Basicamente, ao querer entender porque o modelo ``Caixa Preta'' fez uma certa predição, o LIME testa o que acontece com as predições quando você fornece variações de seus dados no modelo. Com essas amostras de valores perturbados e suas predições é gerado um novo conjunto de dados no qual é treinado um novo modelo, mas dessa vez um modelo interpretável, que será ponderado pela proximidade das unidades amostradas com a predição de interesse estabelecida desde o começo. É importante ressaltar que esse novo modelo ajustado deve ser uma boa aproximação local das predições do modelo ``Caixa Preta'', mas não precisa ser uma boa aproximação global e se ajustar a todo o conjunto de dados.
+
+Basicamente, ao querer entender porque o modelo **Caixa Preta** fez uma certa predição, o LIME testa o que acontece com as predições quando você fornece variações de seus dados no modelo. Com essas amostras de valores perturbados e suas predições é gerado um novo conjunto de dados no qual é treinado um novo modelo, mas dessa vez um modelo interpretável, que será ponderado pela proximidade das unidades amostradas com a predição de interesse estabelecida desde o começo. É importante ressaltar que esse novo modelo ajustado deve ser uma boa aproximação local das predições do modelo **Caixa Preta**, mas não precisa ser uma boa aproximação global e se ajustar a todo o conjunto de dados.
 
 Podemos definir a explicação local para uma predição $x$, com o modelo $g$ que minimiza a perda $L$ medindo o quão perto ele está do modelo original $f$ e mantendo o nível de complexidade $\Omega(g)$ baixo.
 
@@ -24,19 +23,17 @@ Podemos definir a explicação local para uma predição $x$, com o modelo $g$ q
   \text{explicação}(x)  = \arg\min_{g \in G} L(f,g,\pi_x) + \Omega(g).
 \end{equation}
 
-\subsubsection{Exemplo Aplicação}
+### Exemplo de aplicação
 
-O exemplo sobre o classificador de \textit{Huskys} e Lobos citado em \cite{lime} ilustra bem o resultado do LIME usando imagens. Na Figura \ref{fig:imagem_lime} temos um exemplo de um cachorro \textit{Husky} que foi classificado pelo algoritmo como Lobo. Entretanto, quando utilizado o LIME para entender o porquê da predição é separado como importantes para aquela predição as áreas da imagem que contém neve, conforme destacado. Ou seja, o algoritmo não focava em alguma característica dos animais para diferenciá-los, mas sim no plano de fundo das imagens.
+O exemplo sobre o classificador de *Huskys* e Lobos citado em @lime ilustra bem o resultado do LIME usando imagens. Na Figura \ref{fig:imagem_lime} temos um exemplo de um cachorro *Husky* que foi classificado pelo algoritmo como Lobo. Entretanto, quando utilizado o LIME para entender o porquê da predição é separado como importantes para aquela predição as áreas da imagem que contém neve, conforme destacado. Ou seja, o algoritmo não focava em alguma característica dos animais para diferenciá-los, mas sim no plano de fundo das imagens.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.6\textwidth]{lime_husky.PNG}
-\caption{Exemplo de Classificação de Lobos e \textit{Huskys}}
-\label{fig:imagem_lime}
-\centering
-\end{figure}
+```{r imagem_lime, echo=FALSE, out.width="70%",fig.align = 'center', fig.cap="Exemplo de Classificação de Lobos e *Huskys*. <br> Fonte: ADICIONAR A FONTE. "}
+knitr::include_graphics("imgs/lime_husky.PNG")
+```
 
-\subsubsection{Vantagens e Desvantagens}
+
+
+### Vantagens e Desvantagens
 
 As vantagens do algoritmo é que ele é fácil interpretar seus resultados, e pode ser aplicado em dados tabulados, imagens  ou textos. A medida de fidelidade resultante do LIME nos permite mensurar de fato quão próximo do modelo original está o modelo ajustado localmente.
 
@@ -44,47 +41,48 @@ Por outro lado, a definição de vizinhança é uma desvantagem desse método, u
 
 
 
-\subsection{Valores de Shapley }
+## Valores de Shapley 
 
-O algoritmo baseado nos valores de \emph{Shapley} é um método da Teoria de Jogos, apresentado em \cite{shapley_gt}, que propõe uma solução de distribuição justa de ganhos e custos para vários jogadores que trabalham cooperativamente. Ela se aplica, principalmente, em situações em que as contribuições de cada jogador são desiguais, mas trabalham com o mesmo objetivo.
+O algoritmo baseado nos valores de *Shapley* é um método da Teoria de Jogos, apresentado em @shapley_gt, que propõe uma solução de distribuição justa de ganhos e custos para vários jogadores que trabalham cooperativamente. Ela se aplica, principalmente, em situações em que as contribuições de cada jogador são desiguais, mas trabalham com o mesmo objetivo.
 
 A conexão entre essa solução de Teoria de Jogos e a interpretabilidade de modelos de aprendizado de máquina acontece considerando o jogo como uma tarefa de previsão para uma única observação do conjunto de dados. O ganho é a diferença entre a predição real para a observação e a previsão média para todas as demais observações. Além disso, os jogadores são os valores das variáveis para a observação selecionada, que colaboram para receber o ganho, em outras palavras, para prever um determinado valor. 
 
 
 
-Definiremos como é feita a estimativa aproximada de \emph{Shapley} para o valor de uma única característica, ou seja, primeiro selecionamos uma unidade observacional $x$ do \emph{dataset} que temos interesse em interpretar a predição obtida, depois  para cada variável $j$ do modelo calculamos seu valor Shapley, definindo um número de iterações $M$.
+Definiremos como é feita a estimativa aproximada de **Shapley** para o valor de uma única característica, ou seja, primeiro selecionamos uma unidade observacional $x$ do **dataset** que temos interesse em interpretar a predição obtida, depois  para cada variável $j$ do modelo calculamos seu valor Shapley, definindo um número de iterações $M$.
 
 
 Para realizar o cálculo, precisamos definir então: 
 
-\begin{itemize}
- \item número de iterações $M$, 
- \item unidade observacional $x$, 
- \item índice da variável $j$, 
- \item matriz de dados $X$,
- \item modelo de aprendizado de máquina $f$.
-\end{itemize}
 
-Definidos esses valores, conforme apresentado em \cite{molnar2019}, os passos para o cálculo do valor Shapley da $j$-ésima variável são:
+- número de iterações $M$, 
+- unidade observacional $x$, 
+- índice da variável $j$, 
+- matriz de dados $X$,
+- modelo de aprendizado de máquina $f$.
 
-\begin{itemize}
-    \item Para todos $\mathbf{m = 1, \dots, M}$:
-        \subitem Passo 1: Sorteie um exemplo aleatória $\mathbf{z}$ da matriz de dados $\mathbf{X}$
-        \subitem Passo 2: Escolha uma permutação aleatória dos valores do recurso
-        \subitem Passo 3: Ordene a variável $x$: $\mathbf{x_0 = (x_1,...,x_j,...,x_p)}$
-        \subitem Passo 4: Construa duas novas observações:
-        \subsubitem Passo 4.1: com a variável j: $x_{+j}=(x_1,...,x_{j-1},x_j,z_{j+1},...,z_p)$
-        \subsubitem Passo 4.2: sem a variável j: $x_{-j}=(x_1,...,x_{j-1},z_j,z_{j+1},...,z_p)$
-        \subitem Passo 5: Calcule a contribuição marginal
-    \item Passo 6: Calcule os valores Shapley como a média
-\end{itemize}
+
+Definidos esses valores, conforme apresentado em @molnar2019, os passos para o cálculo do valor Shapley da $j$-ésima variável são:
+
+
+- Para todos $\mathbf{m = 1, \dots, M}$:
+  - Passo 1: Sorteie um exemplo aleatória $\mathbf{z}$ da matriz de dados $\mathbf{X}$
+  - Passo 2: Escolha uma permutação aleatória dos valores do recurso
+  - Passo 3: Ordene a variável $x$: $\mathbf{x_0 = (x_1,...,x_j,...,x_p)}$
+  - Passo 4: Construa duas novas observações:
+    -  Passo 4.1: com a variável j: $x_{+j}=(x_1,...,x_{j-1},x_j,z_{j+1},...,z_p)$
+    -  Passo 4.2: sem a variável j: $x_{-j}=(x_1,...,x_{j-1},z_j,z_{j+1},...,z_p)$
+  - Passo 5: Calcule a contribuição marginal
+  - Passo 6: Calcule os valores Shapley como a média
+
 
 
 Em cada iteração, uma observação aleatória z é selecionada a partir dos dados e uma ordem aleatória das variáveis é gerada, após isso duas novas instâncias são criadas combinando valores da observação $x$ e da observação aleatória $z$. No passo 5 calculamos a contribuição marginal da $j$-ésima variável pela diferença de $f(x_{+j})$ por $f(x_{-j})$, e após repetir esse cálculo para cada iteração computamos o valor médio da contribuição marginal.
 
 Como citado anteriormente, essa sequência de passos deve ser repetida para uma das variáveis, a fim de calcularmos o valor Shapley de cada uma delas.
 
-\subsubsection{Exemplo Aplicação}
+### Exemplo Aplicação
+
 Considere um problema relacionado ao empréstimo de dinheiro. Suponha que dois clientes buscaram um empréstimo e temos as seguintes informações sobre eles:
 
 \begin{enumerate}
@@ -96,20 +94,17 @@ Considere um problema relacionado ao empréstimo de dinheiro. Suponha que dois c
 Com as informações da Figura \ref{fig:imagem_shapley} temos que o Cliente 1 possui cartão de crédito, imóvel próprio e não teve dívida recente e o Cliente 2 possui cartão de crédito, imóvel próprio, mas teve uma dívida recente. Como resultado do modelo utilizado para atribuição de um limite de empréstimo o Cliente 1 recebeu R\$  1.500,00 e o Cliente 2 recebeu R\$ 800,00.
 
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.7\textwidth]{shapley.png}
-\caption{Informações sobre cartão de crédito, imóvel próprio e dívida recente dos clientes.}
-\label{fig:imagem_shapley}
-\centering
-\end{figure}
-
-Nesse exemplo, o Cliente 2 teve as três variáveis consideradas conjuntamente para a estimativa do valor de empréstimo de R\$ 800,00 e o interessante é entender o que contribuiu para que esse valor ficasse R\$ 200,00 abaixo da média (considerando a média de empréstimo igual a R\$ 1.000,00). Com as estimativas dos valores de \emph{Shapley} poderíamos dizer, por exemplo, que possuir cartão de crédito contribuiu positivamente R\$ 50,00, imóvel próprio contribuiu com R\$ 100,00 e histórico de dívida recente contribuiu negativamente -R\$ 350,00. Sumarizando as contribuições, temos um saldo de -R\$ 200,00.
+```{r imagem_shapley, echo=FALSE, out.width="70%",fig.align = 'center', fig.cap="Informações sobre cartão de crédito, imóvel próprio e dívida recente dos clientes. <br> Fonte: ADICIONAR A FONTE. "}
+# knitr::include_graphics("imgs/shapley.png")
+```
 
 
-\subsubsection{Vantagens e Desvantagens}
+Nesse exemplo, o Cliente 2 teve as três variáveis consideradas conjuntamente para a estimativa do valor de empréstimo de R\$ 800,00 e o interessante é entender o que contribuiu para que esse valor ficasse R\$ 200,00 abaixo da média (considerando a média de empréstimo igual a R\$ 1.000,00). Com as estimativas dos valores de **Shapley** poderíamos dizer, por exemplo, que possuir cartão de crédito contribuiu positivamente R\$ 50,00, imóvel próprio contribuiu com R\$ 100,00 e histórico de dívida recente contribuiu negativamente -R\$ 350,00. Sumarizando as contribuições, temos um saldo de -R\$ 200,00.
 
-Como vantagens desse método podemos citar que a predição média é razoavelmente distribuída entre os valores das variáveis de uma observação, o que fornece uma explicação completa. Em \cite{molnar2019} o autor cita que essa medida é utilizada quando uma interpretação é exigida legalmente na União Europeia, por exemplo, devido a sua robustez.
+
+### Vantagens e Desvantagens
+
+Como vantagens desse método podemos citar que a predição média é razoavelmente distribuída entre os valores das variáveis de uma observação, o que fornece uma explicação completa. Em @molnar2019, o autor cita que essa medida é utilizada quando uma interpretação é exigida legalmente na União Europeia, por exemplo, devido a sua robustez.
 
 A complexidade computacional do cálculo é uma das desvantagens, sendo viável na maioria dos problemas apenas uma solução aproximada, na nossa aplicação por exemplo, para calcular os valores Shapley (utilizando um computador de 8GB de memória RAM) para uma observação, demorou aproximadamente 150 minutos.
 Outro ponto que pode pesar de forma negativa nessa técnica é a compreensão do seu resultado, que muitas vezes é mal interpretado como se o valor da variável fosse a predição depois de remover a variável do modelo e retreina-lo.
